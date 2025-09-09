@@ -1,7 +1,7 @@
 :root{
     color-scheme: light;
     --color-bg:#ffffff; --color-fg:#946e05; --color-muted:#666;
-    --color-primary:#f8ae0d; --color-danger:#b00020;
+    --color-primary:#ffbf00; --color-danger:#b00020;
 
     --font-body:system-ui, -apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
@@ -23,7 +23,7 @@ a{
     color: var(--color-primary);
     font-weight: bold;
     font-size: large;
-    background-color: #ffbf00;
+    background-color: var(--color-primary);
 }
 
 .media{
@@ -54,6 +54,12 @@ html{
 }
 
 :target{outline: 2px dashed var(--color-primary); outline-offset: 4px;}
+
+.button{
+    font-weight: bold;
+    font-size: large;
+    background-color: var(--color-primary);
+}
 
 .container{
     display: flex;
