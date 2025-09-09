@@ -1,51 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<script src="main.js" defer></script>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Пивляндия</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пивляндия</title>
+    <meta name="description" content="Краткое описание главной страницы вашего сайта">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
- <!-- Шапка сайта -->
- <header>
- <a href="/">Пивляндия</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <!-- Уникальное основное содержимое страницы -->
- <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
- </section>
- <!-- Секция 2 с якорем -->
- <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
- </section>
- <!-- Секция 3 с якорем -->
- <section id="contacts">
- <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
- </section>
- </main>
- <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +8 (800) 555-35-35</p>
- </footer>
+    <!-- Шапка сайта -->
+    <header class="site_header">
+        <img src="assets/favicon.ico"
+        alt="Logo"
+        width="64" height="64"
+        loading="lazy", decoding="async">
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <script defer>
+            const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+            // Автовыбор: системная тема или сохранённый выбор пользователя
+            if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                prefersDark)) {
+                document.body.classList.add('theme-dark');
+                btn?.setAttribute('aria-pressed', 'true');
+            }
+            // Переключение по кнопке с сохранением в localStorage
+            btn?.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('theme-dark');
+                btn.setAttribute('aria-pressed', String(isDark));
+                localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+            });
+        </script>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ui class="site-nav_list">
+                <li class="site-nav_item">
+                    <a class="site-nav_link" href="index.html">Главная</a>
+                </li>
+                <li class="site-nav_item">
+                    <a class="site-nav_link" href="about.html">О нас</a>
+                </li>
+                <li class="site-nav_item">
+                    <a class="site-nav_link" href="contacts.html">Контакты</a>
+                </li>
+            </ui>
+        </nav>
+    </header>
+    <!-- Уникальное основное содержимое страницы -->
+    <main>
+        <h1>Добро пожаловать на наш сайт!</h1>
+        <img src="https://avatars.mds.yandex.net/i?id=671123049e80b05ae5ecd03de4089c91_l-4459486-images-thumbs&n=13"
+        alt="Проект"
+        width="320", height="361"
+        loading="lazy" decoding="async">
+        <!-- Секция 1 с якорем -->
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13"
+            alt="beer"
+            width="320", height="360"
+            loading="lazy", decoding="async">
+            <p>Описание предоставляемых услуг...</p>
+            <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+        </section>
+        <!-- Секция 2 с якорем -->
+        <section id="portfolio">
+            <h2>Портфолио</h2>
+            <p>Примеры наших работ...</p>
+        </section>
+        <!-- Секция 3 с якорем -->
+        <section id="contacts">
+            <h2>Контактная информация</h2>
+            <p>Наши контакты...</p>
+            <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+        </section>
+    </main>
+    <!-- Подвал сайта -->
+    <footer>
+        <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +8 (800) 555-35-35</p>
+    </footer>
 </body>
+
 </html>
