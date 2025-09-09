@@ -1,7 +1,7 @@
 :root{
     color-scheme: light;
-    --color-bg:#ffffff; --color-fg:#0b0b0b; --color-muted:#666;
-    --color-primary:#0a84ff; --color-danger:#b00020;
+    --color-bg:#ffffff; --color-fg:#946e05; --color-muted:#666;
+    --color-primary:#f8ae0d; --color-danger:#b00020;
 
     --font-body:system-ui, -apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
@@ -10,20 +10,20 @@
     --shadow:0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.08);
 }
 
-a:link{
-    color:#43cb16;
+body.theme-dark{
+    --color-bg:#000000; --color-fg:#f5f5f5; --color-muted:#aaa;
+    --color-primary:#ffca38;
 }
 
-a:visited{
-    color:#2c8e0c;
+a{
+    color: var(--color-primary);
 }
 
-a:hover{
-    color:#34b309;
-}
-
-a:active{
-    color:#1a5f02;
+.site-nav_link{
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: large;
+    background-color: #ffbf00;
 }
 
 .media{
@@ -44,11 +44,6 @@ a:active{
 
 :disabled,[aria-disabled="true"]{opacity:.6; cursor: not-allowed;}
 
-body.theme-dark{
-    --color-bg:#0b0b0b; --color-fg:#f5f5f5; --color-muted:#aaa;
-    --color-primary:#6aa2ff;
-}
-
 /* БАЗА: читаемость и предсказуемость размеров */
 * {
     box-sizing: border-box;
@@ -61,8 +56,26 @@ html{
 :target{outline: 2px dashed var(--color-primary); outline-offset: 4px;}
 
 .container{
+    display: flex;
     width: min(100% - 2*var(--space-4), 1120px);
     margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.site-nav_div{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.site-nav_link{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--color-bg) 0.3s;
 }
 
 .section{
@@ -74,7 +87,11 @@ html{
 
 #header .menu .item a{color: #333;}
 
-.site-nav_link{ color: var(--color-fg);}
+header{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.499), rgba(0, 0, 0, 0.175)),
+    url("assets/beer_bg.jpg") top;
+    padding: 10px;
+}
 
 *{box-sizing: border-box;}
 html,body{margin: 0; padding: 0;}
@@ -97,6 +114,10 @@ button,input,select,textarea {font:inherit; color:inherit}
 label {
     display: block;
     margin: 0.5rem 0 0.25rem;
+}
+
+.box{
+    display: inline;
 }
 
 input,

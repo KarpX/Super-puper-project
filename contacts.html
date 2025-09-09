@@ -13,22 +13,39 @@
 </head>
 
 <body>
-   <header class="site_header">
-      <a class="site-header_brand" href="/">Лого</a>
-      <nav class="site-nav" aria-label="Основная навигация">
-         <ui class="site-nav_list">
-            <li class="site-nav_item">
-               <a class="site-nav_link" href="index.html">Главная</a>
-            </li>
-            <li class="site-nav_item">
-               <a class="site-nav_link" href="about.html">О нас</a>
-            </li>
-            <li class="site-nav_item">
-               <a class="site-nav_link" href="contacts.html">Контакты</a>
-            </li>
-         </ui>
-      </nav>
-   </header>
+  <header class="site_header">
+        <div class="container">
+            <a href="index.html">
+                <img src="assets/beer_king.png" alt="Логотип" width="160px" , height="160px">
+            </a>
+        </div>
+
+        <div class="container">
+            <button class="theme-toggle" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
+            <script defer>
+                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+                // Автовыбор: системная тема или сохранённый выбор пользователя
+                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                    prefersDark)) {
+                    document.body.classList.add('theme-dark');
+                    btn?.setAttribute('aria-pressed', 'true');
+                }
+                // Переключение по кнопке с сохранением в localStorage
+                btn?.addEventListener('click', () => {
+                    const isDark = document.body.classList.toggle('theme-dark');
+                    btn.setAttribute('aria-pressed', String(isDark));
+                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+                });
+            </script>
+        </div>
+
+        <div class="site-nav_div">
+            <a class="site-nav_link" href="index.html">Главная</a>
+            <a class="site-nav_link" href="about.html">О нас</a>
+            <a class="site-nav_link" href="contacts.html">Контакты</a>
+        </div>
+    </header>
    <main>
       <!-- Простые "хлебные крошки" -->
       <nav aria-label="Хлебные крошки">
