@@ -14,41 +14,37 @@
 <body>
     <!-- Шапка сайта -->
     <header class="site_header">
-        <picture>
-            <source type="image/webp" srcset="assets/beer_king.webp">
-            <img src="assets/beer_king.webp" alt="Логотип"
-            width="320", height="320">
-        </picture>
-        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
-        <script defer>
-            const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-            // Автовыбор: системная тема или сохранённый выбор пользователя
-            if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-                prefersDark)) {
-                document.body.classList.add('theme-dark');
-                btn?.setAttribute('aria-pressed', 'true');
-            }
-            // Переключение по кнопке с сохранением в localStorage
-            btn?.addEventListener('click', () => {
-                const isDark = document.body.classList.toggle('theme-dark');
-                btn.setAttribute('aria-pressed', String(isDark));
-                localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-            });
-        </script>
-        <nav class="site-nav" aria-label="Основная навигация">
-            <ui class="site-nav_list">
-                <li class="site-nav_item">
-                    <a class="site-nav_link" href="index.html">Главная</a>
-                </li>
-                <li class="site-nav_item">
-                    <a class="site-nav_link" href="about.html">О нас</a>
-                </li>
-                <li class="site-nav_item">
-                    <a class="site-nav_link" href="contacts.html">Контакты</a>
-                </li>
-            </ui>
-        </nav>
+        <div class="container">
+            <a href="index.html">
+                <img src="assets/beer_king.png" alt="Логотип" width="160px" , height="160px">
+            </a>
+        </div>
+
+        <div class="container">
+            <button class="theme-toggle" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
+            <script defer>
+                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+                // Автовыбор: системная тема или сохранённый выбор пользователя
+                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                    prefersDark)) {
+                    document.body.classList.add('theme-dark');
+                    btn?.setAttribute('aria-pressed', 'true');
+                }
+                // Переключение по кнопке с сохранением в localStorage
+                btn?.addEventListener('click', () => {
+                    const isDark = document.body.classList.toggle('theme-dark');
+                    btn.setAttribute('aria-pressed', String(isDark));
+                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+                });
+            </script>
+        </div>
+
+        <div class="site-nav_div">
+            <a class="site-nav_link" href="index.html">Главная</a>
+            <a class="site-nav_link" href="about.html">О нас</a>
+            <a class="site-nav_link" href="contacts.html">Контакты</a>
+        </div>
     </header>
     <!-- Уникальное основное содержимое страницы -->
     <main>
@@ -59,10 +55,10 @@
         <section id="services">
             <h2>Наши услуги</h2>
             <img src="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13"
-            srcset="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13" 640w, 
-            sizes="(max-width: 700px) 92vw" loading="lazy">
+                srcset="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13"
+                640w, sizes="(max-width: 700px) 92vw" loading="lazy">
             <p>Описание предоставляемых услуг...</p>
-            <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+            <a class="site-nav_link" href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
         </section>
         <!-- Секция 2 с якорем -->
         <section id="portfolio">
@@ -79,7 +75,8 @@
         <section id="contacts">
             <h2>Контактная информация</h2>
             <p>Наши контакты...</p>
-            <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+            <a class="site-nav_link" href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+
         </section>
     </main>
     <!-- Подвал сайта -->
