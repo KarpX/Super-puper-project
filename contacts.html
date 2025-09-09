@@ -2,8 +2,8 @@
 <html lang="ru">
 
 <head>
-   <link rel="stylesheet" href="styles.css">
    <script src="main.js" defer></script>
+   <link rel="stylesheet" href="styles.css">
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- Скопируйте весь блок <head> из index.html -->
@@ -13,16 +13,21 @@
 </head>
 
 <body>
-   <header>
-      <a href="assets/favicon.ico">Пивляндия</a>
-      <!-- Главное меню навигации -->
-      <nav>
-         <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-         </ul>
-      </nav> <!-- Скопируйте весь блок <header> из index.html -->
+   <header class="site_header">
+      <a class="site-header_brand" href="/">Лого</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+         <ui class="site-nav_list">
+            <li class="site-nav_item">
+               <a class="site-nav_link" href="index.html">Главная</a>
+            </li>
+            <li class="site-nav_item">
+               <a class="site-nav_link" href="about.html">О нас</a>
+            </li>
+            <li class="site-nav_item">
+               <a class="site-nav_link" href="contacts.html">Контакты</a>
+            </li>
+         </ui>
+      </nav>
    </header>
    <main>
       <!-- Простые "хлебные крошки" -->
