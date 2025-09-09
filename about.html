@@ -19,26 +19,6 @@
             </a>
         </div>
 
-        <div class="container">
-            <button class="theme-toggle" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
-            <script defer>
-                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-                // Автовыбор: системная тема или сохранённый выбор пользователя
-                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-                    prefersDark)) {
-                    document.body.classList.add('theme-dark');
-                    btn?.setAttribute('aria-pressed', 'true');
-                }
-                // Переключение по кнопке с сохранением в localStorage
-                btn?.addEventListener('click', () => {
-                    const isDark = document.body.classList.toggle('theme-dark');
-                    btn.setAttribute('aria-pressed', String(isDark));
-                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-                });
-            </script>
-        </div>
-
         <div class="site-nav_div">
             <a class="site-nav_link" href="index.html">Главная</a>
             <a class="site-nav_link" href="about.html">О нас</a>
@@ -63,7 +43,26 @@
    </main>
    <footer>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
-      <p>Телефон: +8 (800) 555-35-35</p> <!-- Скопируйте весь блок <footer> из index.html -->
+      <p>Телефон: +8 (800) 555-35-35</p> 
+      <div>
+            <button class="theme-toggle button" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
+            <script defer>
+                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+                // Автовыбор: системная тема или сохранённый выбор пользователя
+                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                    prefersDark)) {
+                    document.body.classList.add('theme-dark');
+                    btn?.setAttribute('aria-pressed', 'true');
+                }
+                // Переключение по кнопке с сохранением в localStorage
+                btn?.addEventListener('click', () => {
+                    const isDark = document.body.classList.toggle('theme-dark');
+                    btn.setAttribute('aria-pressed', String(isDark));
+                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+                });
+            </script>
+        </div>
    </footer>
 </body>
 
