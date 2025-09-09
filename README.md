@@ -3,5 +3,4 @@
 ## Проект 
 Каркасик для так называемого веб-приложения
 
-## Ссылки
--[Сайтик](https://karpx.github.io/Super-puper-project/)
+ - [Сайт](https://karpx.github.io/Super-puper-project/)
