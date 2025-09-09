@@ -89,7 +89,7 @@ html{
 
 header{
     background: linear-gradient(to top, rgba(0, 0, 0, 0.499), rgba(0, 0, 0, 0.175)),
-    url("assets/beer_bg.jpg") top;
+    url("assets/beer_bg.jpg") center;
     padding: 10px;
 }
 

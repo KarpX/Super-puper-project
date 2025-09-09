@@ -16,29 +16,10 @@
     <header class="site_header">
         <div class="container">
             <a href="index.html">
-                <img src="assets/beer_king.png" alt="Логотип" width="160px" , height="160px">
+                <img src="assets/beer_king.png" alt="Логотип" width="200px" , height="200px">
             </a>
         </div>
 
-        <div class="container">
-            <button class="theme-toggle" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
-            <script defer>
-                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-                // Автовыбор: системная тема или сохранённый выбор пользователя
-                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-                    prefersDark)) {
-                    document.body.classList.add('theme-dark');
-                    btn?.setAttribute('aria-pressed', 'true');
-                }
-                // Переключение по кнопке с сохранением в localStorage
-                btn?.addEventListener('click', () => {
-                    const isDark = document.body.classList.toggle('theme-dark');
-                    btn.setAttribute('aria-pressed', String(isDark));
-                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-                });
-            </script>
-        </div>
         <div class="site-nav_div">
             <a class="site-nav_link" href="index.html">Главная</a>
             <a class="site-nav_link" href="about.html">О нас</a>
@@ -63,7 +44,7 @@
         <section id="portfolio">
             <h2>Портфолио</h2>
             <div class="media">
-                <iframe src="https://vkvideo.ru/video_ext.php?oid=246118034&id=456239127&hd=2&autoplay=1" width="853"
+                <iframe src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1" width="853"
                     height="480" style="background-color: #000"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0"
                     allowfullscreen></iframe>
@@ -82,6 +63,25 @@
     <footer>
         <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
         <p>Телефон: +8 (800) 555-35-35</p>
+        <div>
+            <button class="theme-toggle" type="button" aria-pressed="false" style="width: 20%;">Сменить тему</button>
+            <script defer>
+                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+                // Автовыбор: системная тема или сохранённый выбор пользователя
+                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                    prefersDark)) {
+                    document.body.classList.add('theme-dark');
+                    btn?.setAttribute('aria-pressed', 'true');
+                }
+                // Переключение по кнопке с сохранением в localStorage
+                btn?.addEventListener('click', () => {
+                    const isDark = document.body.classList.toggle('theme-dark');
+                    btn.setAttribute('aria-pressed', String(isDark));
+                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+                });
+            </script>
+        </div>
     </footer>
 </body>
 
