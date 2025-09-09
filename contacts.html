@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Скопируйте весь блок <head> из index.html -->
- <title>О нас - Название вашего сайта</title>
- <meta name="description" content="Связаться с нами">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="styles.css">
+   <script src="main.js" defer></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Скопируйте весь блок <head> из index.html -->
+   <title>О нас - Название вашего сайта</title>
+   <meta name="description" content="Связаться с нами">
+   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
- <header>
-    <a href="assets/favicon.ico">Пивляндия</a>
-    <!-- Главное меню навигации -->
-    <nav>
-    <ul>
-    <li><a href="index.html">Главная</a></li>
-    <li><a href="about.html">О нас</a></li>
-    <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-    </nav> <!-- Скопируйте весь блок <header> из index.html -->
- </header>
- <main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>Контакты</span>
- </nav>
- <h1>Наши контакты</h1>
- <section>
- <p>Email: pivlandia@gmail.com</p>
- </section>
- </main>
- <footer>
-    <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
-    <p>Телефон: +8 (800) 555-35-35</p> <!-- Скопируйте весь блок <footer> из index.html -->
- </footer>
+   <header>
+      <a href="assets/favicon.ico">Пивляндия</a>
+      <!-- Главное меню навигации -->
+      <nav>
+         <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+         </ul>
+      </nav> <!-- Скопируйте весь блок <header> из index.html -->
+   </header>
+   <main>
+      <!-- Простые "хлебные крошки" -->
+      <nav aria-label="Хлебные крошки">
+         <a href="index.html">Главная</a> →
+         <span>Контакты</span>
+      </nav>
+      <h1>Наши контакты</h1>
+      <section>
+         <p>Email: pivlandia@gmail.com</p>
+         <button id="openDialog" type="button">Написать нам</button>
+         <dialog id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Обратная связь</h2>
+
+            <form id="contactForm" method="dialog" novalidate>
+               <label for="name">Имя</label>
+               <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+
+               <lable for="email">E-mail</lable>
+               <input id="email" name="email" type="email" required autocomplete="email">
+
+               <label for="phone">Телефон</label>
+               <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp"
+                  placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-d{2}$">
+               <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+
+               <label for="date">Дата</label>
+               <input id="'date" name="date" type="date">
+
+               <label for="topic">Тема обращения</label>
+               <select id="topic" name="topic" required>
+                  <option value="">Выберите тему</option>
+                  <option>Вопрос</option>
+                  <option>Заказ</option>
+               </select>
+
+               <label for="message">Сообщение</label>
+               <textarea id="message" name="message" rows="4" required></textarea>
+
+               <div class="form-actions">
+                  <button type="button" , id="closeDialog">Закрыть</button>
+                  <button type="submit">Отправить</button>
+               </div>
+            </form>
+         </dialog>
+      </section>
+   </main>
+   <footer>
+      <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
+      <p>Телефон: +8 (800) 555-35-35</p> <!-- Скопируйте весь блок <footer> из index.html -->
+   </footer>
 </body>
+
 </html>
