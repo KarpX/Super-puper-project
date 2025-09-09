@@ -56,6 +56,9 @@ html{
 :target{outline: 2px dashed var(--color-primary); outline-offset: 4px;}
 
 .button{
+    color: #fff;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
     font-size: large;
     background-color: var(--color-primary);
@@ -115,7 +118,7 @@ body {
 
 img, video {max-width: 100%; height: auto; display: block;}
 
-button,input,select,textarea {font:inherit; color:inherit}
+input,select,textarea {font:inherit; color:inherit}
 /* Формы: размеры, отступы, визуальный порядок */
 label {
     display: block;
@@ -136,15 +139,6 @@ button {
     border: 1px solid #c8c8c8;
     border-radius: 8px;
     background: #fff;
-}
-
-/* Кнопка по умолчанию */
-button,
-[type="submit"] {
-    background: #e6c50b;
-    color: #fff;
-    border: none;
-    cursor: pointer;
 }
 
 /* Состояния: клавиатура/мышь/ошибки */
