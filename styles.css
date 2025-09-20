@@ -1,6 +1,6 @@
 :root{
     color-scheme: light;
-    --color-bg:#ffffff; --color-fg:#946e05; --color-muted:#666;
+    --color-bg:#FBFCFF; --color-fg:#562C2C; --color-muted:#666;
     --color-primary:#ffbf00; --color-danger:#b00020;
 
     --font-body:system-ui, -apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -12,7 +12,19 @@
 
 body.theme-dark{
     --color-bg:#000000; --color-fg:#f5f5f5; --color-muted:#aaa;
-    --color-primary:#ffca38;
+    --color-primary:#ffbf00;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding-left: 16px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    padding-left: 14px;
 }
 
 a{
@@ -53,7 +65,7 @@ html{
     scroll-behavior: smooth;
 }
 
-:target{outline: 2px dashed var(--color-primary); outline-offset: 4px;}
+:target{outline: 2px dashed var(--color-primary); outline-offset: 14px;}
 
 .button{
     color: #fff;
@@ -178,3 +190,165 @@ dialog::backdrop {
     margin-top: 1rem;
 }
 
+.slide{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.labelContainer{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 125px;
+    height: 30px;
+    background-color: var(--color-fg);
+
+}
+
+ul{
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0;;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 600px;
+    justify-self: center;
+}
+
+ul{
+    anchor-name: --my-carousel;
+}
+
+ul::scroll-marker-group{
+    position: absolute;
+    position-anchor: --my-carousel;
+    top: calc(anchor(bottom) - 70px);
+    justify-self: anchor-center;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+ul::-webkit-scrollbar{
+    display: none;
+}
+
+
+li{
+    scroll-snap-align: center;
+    list-style-type: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    scroll-snap-align: center;
+    flex: 0 0 calc((100% - 20px)/3);
+    cursor: pointer;
+}
+
+li img{
+    pointer-events: none;
+}
+
+ul::scroll-button(*){
+    border: 0;
+    font-size: 2rem;
+    background: none;
+    color: black;
+    opacity: 0.7;
+    cursor: pointer;
+    align-self: anchor-center;
+    position: absolute;
+    position-anchor: --my-carousel;
+}
+
+ul::scroll-button(*):hover,
+ul:scroll-button(*):focus{
+    opacity: 1;
+}
+
+ul::scroll-button(*):active{
+    translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled{
+    opacity: 0.2;
+    cursor: unset;
+}
+
+ul::scroll-button(left){
+    content: "◄";
+    right: calc(anchor(left) - 45px);
+}
+
+ul::scroll-button(right){
+    content: "►";
+    left: calc(anchor(right) - 45px);
+}
+
+.emptyContainer {
+    height: 5rem;
+}
+
+.modalContent {
+    position: relative;
+}
+
+#drinkWindow {
+    width: 600px;
+}
+
+.close{
+    position: absolute;
+    background: transparent;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: -50px;
+    right: 0px;
+    border: none;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-primary);
+    z-index: 10;
+    outline: none;
+}
+
+#modalTitle{
+    font-size: 2.5rem;
+    color: var(--color-fg);
+    font-weight: bold;
+}
+
+#modalImg {
+    display: flex;
+    justify-self: center;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#modalText {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.modalTextContainer {
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.alcoholPercentContainer {
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    font-size: 1.3rem;
+    background-color: var(--color-fg);
+}
