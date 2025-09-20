@@ -3,6 +3,7 @@
 
 <head>
     <script src="main.js" defer></script>
+    <script src="drinkWindow.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,18 +30,66 @@
     <!-- Уникальное основное содержимое страницы -->
     <main>
         <h1>Добро пожаловать на наш сайт!</h1>
-        <img src="https://avatars.mds.yandex.net/i?id=671123049e80b05ae5ecd03de4089c91_l-4459486-images-thumbs&n=13"
-            alt="Проект" width="320" , height="361" loading="lazy" decoding="async">
-        <!-- Секция 1 с якорем -->
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <img src="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13"
-                srcset="https://avatars.mds.yandex.net/i?id=d0f9f6edcf1ed61cd74f61587c87122b_l-4080720-images-thumbs&n=13"
-                640w, sizes="(max-width: 700px) 92vw" loading="lazy">
-            <p>Описание предоставляемых услуг...</p>
-            <a class="site-nav_link" href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+        <section id="beerCarousel">
+            <h2>Наши напитки</h2>
+            <ul class="carousel">
+                <li class="card" data-title="Лагер"
+                    data-text="Светлое пиво из Германии. Сварено по классическому баварскому рецепту. Гармоничный солодовый вкус и мягкое послевкусие с горчинкой хмеля. Пена плотная и пышная. Идеально подходит к мясным блюдам и копчёностям."
+                    data-alcohol-percent="Содержание алкоголя — 4,9%"
+                    data-img="assets/lager.png">
+                    <img class="slide" src="assets/lager.png" alt="Лагер" width="200" height="200">
+                    <div class="labelContainer">
+                        <a class="drinkLabel">Лагер</a>
+                    </div>
+                </li>
+                <li class="card" data-title="Темный лагер" 
+                data-text="Классический темный лагер в стиле Шварцбир, обладающий характерным бархатистым вкусом с солодово-кофейными тонами и гармоничной хмелевой горечью. В его составе — поджаренный ячменный солод, хмель и дрожжи. Благодаря такой рецептуре, лагер получает аутентичный, натуральный вкус."
+                data-alcohol-percent="Содержание алкоголя — 4,7%"
+                data-img="assets/dark_lager.png">
+                    <img class="slide" src="assets/dark_lager.png" alt="Тёмный лагер" width="200" height="200">
+                    <div class="labelContainer">
+                        <a class="drinkLabel">Темный лагер</a>
+                    </div>
+                </li>
+                <li class="card" data-title="Эль"
+                data-text='Насыщенный, нефильтрованный золотой эль из линейки "Европейская классика", выполненный в стиле Belgian Blond Ale. Пиво изготавливается из пшеничного солода, бельгийского ячменного солода, жатецкого хмеля, кориандра и дрожжей. Оно обладает тонким эфирным ароматом с нотками специй, который создают бельгийские дрожжи. Крепость пива дает ощутимый согревающий эффект и стимулирует рецепторы, но не перегружает их. "Блонд Эль" станет идеальным сопровождением изысканных блюд из морепродуктов, рыбы и мяса птицы.'
+                data-alcohol-percent="Содержание алкоголя — 6%"
+                data-img="assets/el.png">
+                    <img class="slide" src="assets/el.png" alt="Эль" width="200" height="200">
+                    <div class="labelContainer">
+                        <a class="drinkLabel">Эль</a>
+                    </div>
+                </li>
+                <li class="card" data-title="Ламбик"
+                data-text="Традиционная нефильтрованная смесь ламбиков собственного приготовления Ламбик Фабрик, полученная в результате спонтанного брожения."
+                data-alcohol-percent="Содержание алкоголя — 6,3%"
+                data-img="assets/lambic.png">
+                    <img class="slide" src="assets/lambic.png" alt="Ламбик" width="200" height="200">
+                    <div class="labelContainer">
+                        <a class="drinkLabel">Ламбик</a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <dialog id="drinkWindow">
+                <div class="modalContent">
+                    <button id="closeModal" class="close">&times;</button>
+                    <h2 id="modalTitle"></h2>
+                    <img id="modalImg" src="" alt="" />
+                    <div class="modalTextContainer">
+                        <a id="modalText"></a>
+                    </div>
+                    <div class="emptyContainer"></div>
+                    <div class="alcoholPercentContainer">
+                        <a id="alcoholPercentText"></a>
+                    </div>
+                </div>
+            </dialog>
+
         </section>
         <!-- Секция 2 с якорем -->
+        <div class="emptyContainer"></div>
         <section id="portfolio">
             <h2>Портфолио</h2>
             <div class="media">
@@ -50,14 +99,16 @@
                     allowfullscreen></iframe>
             </div>
             <p>Примеры наших работ...</p>
+            <a class="site-nav_link" href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
         </section>
         <!-- Секция 3 с якорем -->
+        <div class="emptyContainer"></div>
         <section id="contacts">
             <h2>Контактная информация</h2>
             <p>Наши контакты...</p>
             <a class="site-nav_link" href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
-
         </section>
+        <div class="emptyContainer"></div>
     </main>
     <!-- Подвал сайта -->
     <footer>
