@@ -210,7 +210,7 @@ ul{
     align-items: center;
     list-style: none;
     padding: 10px;
-    margin: 0;;
+    margin: 0;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
