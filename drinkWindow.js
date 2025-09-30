@@ -8,6 +8,7 @@ console.log("loaded");
 document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () =>{
         console.log("clicked");
+        document.body.style.overflow = 'hidden';
         modalTitle.textContent = card.dataset.title;
         modalText.textContent = card.dataset.text;
         modalImg.src = card.dataset.img;
@@ -18,9 +19,13 @@ document.querySelectorAll(".card").forEach(card => {
 });
 
 closeDrinkBtn.addEventListener("click", () => {
+    document.body.style.overflow = '';
     modal.close();
 });
 
 modal.addEventListener("click", e => {
-    if (e.target === modal) modal.close();
+    if (e.target === modal) {
+        document.body.style.overflow = '';
+        modal.close();
+    } 
 });
