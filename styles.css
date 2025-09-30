@@ -297,7 +297,7 @@ ul{
     align-items: center;
     list-style: none;
     padding: 10px;
-    margin: 0;;
+    margin: 0;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -434,8 +434,7 @@ ul::scroll-button(right){
     display: flex;
     justify-self: center;
     font-size: 1.3rem;
-    background-color: var(--color-fg);
-    
+    background-color: var(--color-fg);  
 }
 
 p {
