@@ -19,11 +19,11 @@
             </a>
         </div>
 
-        <div class="site-nav_div">
+        <nav class="site-nav_div">
             <a class="site-nav_link" href="index.html">Главная</a>
             <a class="site-nav_link" href="about.html">О нас</a>
             <a class="site-nav_link" href="contacts.html">Контакты</a>
-        </div>
+        </nav>
     </header>
     <main>
         <!-- Простые "хлебные крошки" -->
@@ -57,18 +57,18 @@
     </main>
     <footer>
         <div class="buttonContainer">
-            <button class="button" type="button" aria-pressed="false">Сменить
+            <button class="theme-toggle button" type="button" aria-pressed="false">Сменить
                 тему</button>
             <script defer>
                 const KEY = 'theme', btn = document.querySelector('.theme-toggle');
                 const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-                // Автовыбор: системная тема или сохранённый выбор пользователя
+
                 if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
                     prefersDark)) {
                     document.body.classList.add('theme-dark');
                     btn?.setAttribute('aria-pressed', 'true');
                 }
-                // Переключение по кнопке с сохранением в localStorage
+
                 btn?.addEventListener('click', () => {
                     const isDark = document.body.classList.toggle('theme-dark');
                     btn.setAttribute('aria-pressed', String(isDark));

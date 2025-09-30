@@ -21,11 +21,11 @@
             </a>
         </div>
 
-        <div class="site-nav_div">
+        <nav class="site-nav_div">
             <a class="site-nav_link" href="index.html">Главная</a>
             <a class="site-nav_link" href="about.html">О нас</a>
             <a class="site-nav_link" href="contacts.html">Контакты</a>
-        </div>
+        </nav>
     </header>
     
     <main>
@@ -74,11 +74,11 @@
                     <h2 id="modalTitle"></h2>
                     <img id="modalImg" src="" alt="" />
                     <div class="modalTextContainer">
-                        <a id="modalText"></a>
+                        <p id="modalText"></p>
                     </div>
                     <div class="emptyContainer"></div>
                     <div class="alcoholPercentContainer">
-                        <a id="alcoholPercentText"></a>
+                        <p id="alcoholPercentText" style="color: var(--color-primary);"></p>
                     </div>
                 </div>
             </dialog>
@@ -87,23 +87,32 @@
 
         <div class="emptyContainer"></div>
         <section id="portfolio">
-            <h2>Портфолио</h2>
             <div class="media">
                 <iframe src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1" width="853"
                     height="480" style="background-color: #000"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0"
                     allowfullscreen></iframe>
             </div>
-            <p>Примеры наших работ...</p>
-            <div class="buttonContainer">
-                <a class="site-nav_link" href="#contacts">Связаться с нами</a>
-            </div>
         </section>
 
         <div class="emptyContainer"></div>
         <section id="contacts">
             <h2>Контактная информация</h2>
-            <p>Наши контакты...</p>
+            <section class="contactsList">
+                <div class="contact-container">
+                    <img src="./assets/icons/email-ico.png" width="32" height="32" loading="lazy">
+                    <p style="margin: 3px;">Email: pivlandia@gmail.com</p>
+                </div>
+                <div class="contact-container">
+                    <img src="./assets/icons/phone-ico.png" width="32" height="32" loading="lazy">
+                    <p style="margin: 3px;">+8 (800) 555-35-35</p>
+                </div>
+            </section>
+            <aside>
+                <h2>Как нас найти?</h2>
+                <iframe src="https://yandex.ru/maps/-/CLuDiQ0y" allowfullscreen="" loading="lazy"></iframe>
+            </aside>
+            <div class="emptyContainer"></div>
             <div class="buttonContainer">
                 <a class="site-nav_link" href="contacts.html">Подробнее</a>
             </div>
