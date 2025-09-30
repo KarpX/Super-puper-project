@@ -19,44 +19,56 @@
             </a>
         </div>
 
-        <div class="site-nav_div">
+        <nav class="site-nav_div">
             <a class="site-nav_link" href="index.html">Главная</a>
             <a class="site-nav_link" href="about.html">О нас</a>
             <a class="site-nav_link" href="contacts.html">Контакты</a>
-        </div>
+        </nav>
     </header>
     <main>
         <!-- Простые "хлебные крошки" -->
-        <nav aria-label="Хлебные крошки">
+        <nav class="crumbs" aria-label="Хлебные крошки">
             <a href="index.html">Главная</a> →
             <span>О нас</span>
         </nav>
         <h1>О нашей компании</h1>
-        <section>
-            <h2>Наша история</h2>
-            <p>Текст о том, как все начиналось...</p>
-        </section>
-        <section>
-            <h2>Наша команда</h2>
-            <p>Текст о команде...</p>
-        </section>
+        <div class="infoContainer">
+            <div class="aboutBox">
+                <h2 class="boxHeader">Наша история</h2>
+                <p class="boxContent">В далеком 1886 году два брата решили сделать мир более счастливым. Для этого они
+                    отправились в
+                    далекие земли, чтобы узнать рецепты самых главных зелий счастья. Объехав весь мир, они вернулись
+                    домой и начали готовиться к революции в питейном деле. Поначалу их воспринимали как чудаков,
+                    непонимающих, что они творят. Но вот прошло уже больше 100 лет, а их самое главное достижение –
+                    жидкое золото, или же пиво, – до сих пор остается напитком, который дарит людям радость и счастье
+                </p>
+            </div>
+
+            <div class="aboutBox" style="flex-direction: row-reverse; padding: 0 2px 0 10%;">
+                <h2 class="boxHeader" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-right: 3px solid #000000; border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: transparent;">Наша команда</h2>
+                <p class="boxContent" style="text-align: end;">Наши самые главные любители пива собрались вместе для того, чтобы подарить Вам
+                    билет в невероятное путешествие по стране жидкого золота. Мы трепетно относимся к каждому товарищу и
+                    клиенту. Нам очень важно, чтобы всем было комфортно</p>
+            </div>
+
+        </div>
+
+        <div class="emptyContainer"></div>
     </main>
     <footer>
-        <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
-        <p>Телефон: +8 (800) 555-35-35</p>
-        <div>
-            <button class="theme-toggle button" type="button" aria-pressed="false" style="width: 100px;">Сменить
+        <div class="buttonContainer">
+            <button class="theme-toggle button" type="button" aria-pressed="false">Сменить
                 тему</button>
             <script defer>
                 const KEY = 'theme', btn = document.querySelector('.theme-toggle');
                 const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-                // Автовыбор: системная тема или сохранённый выбор пользователя
+
                 if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
                     prefersDark)) {
                     document.body.classList.add('theme-dark');
                     btn?.setAttribute('aria-pressed', 'true');
                 }
-                // Переключение по кнопке с сохранением в localStorage
+
                 btn?.addEventListener('click', () => {
                     const isDark = document.body.classList.toggle('theme-dark');
                     btn.setAttribute('aria-pressed', String(isDark));
@@ -64,6 +76,8 @@
                 });
             </script>
         </div>
+        <p>Телефон: +8 (800) 555-35-35</p>
+        <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>
 </body>
 

@@ -1,7 +1,10 @@
 :root{
     color-scheme: light;
-    --color-bg:#FBFCFF; --color-fg:#562C2C; --color-muted:#666;
+    --color-bg:#FBFCFF; --color-fg:#463730e5; --color-muted:#666;
     --color-primary:#ffbf00; --color-danger:#b00020;
+    --color-boxHeader: #fffae6; --color-boxBg: #ffbf00; --color-boxContent:#FBFCFF; 
+
+    --header-image: url("assets/beer_bg.jpg");
 
     --font-body:system-ui, -apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
@@ -11,8 +14,10 @@
 }
 
 body.theme-dark{
-    --color-bg:#000000; --color-fg:#f5f5f5; --color-muted:#aaa;
-    --color-primary:#ffbf00;
+    --color-bg:#463730; --color-fg:rgba(180, 145, 102, 0.923); --color-muted:#aaa;
+    --color-primary:#573013;
+    --color-boxBg: #573013; --color-boxHeader: rgba(226, 197, 161, 0.907); --color-boxContent:rgba(180, 145, 102, 0.907); 
+    --header-image: url("assets/beer_bg_dark_theme2.png");
 }
 
 h1{
@@ -28,7 +33,17 @@ h2{
 }
 
 a{
-    color: var(--color-primary);
+    color: var(--color-fg);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    padding: 3px;
+    height: auto;
+    width: 100%;
 }
 
 .site-nav_link{
@@ -45,8 +60,17 @@ a{
 }
 .media iframe,
 .media video{
-    width: 100%; height: 100%;
-    border: 0; border-radius: var(--radius);
+    display: flex;
+    justify-self: center;
+    width: 80%; height: 100%;
+    border: 3px solid #000000; border-radius: var(--radius);
+}
+
+iframe {
+    display: flex;
+    justify-self: center;
+    width: 95%;
+    height: 400px;
 }
 
 :where(a,button,input,select,textarea):focus-visible{
@@ -65,6 +89,12 @@ html{
     scroll-behavior: smooth;
 }
 
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
 :target{outline: 2px dashed var(--color-primary); outline-offset: 14px;}
 
 .button{
@@ -74,6 +104,15 @@ html{
     font-weight: bold;
     font-size: large;
     background-color: var(--color-primary);
+    width: 200px;
+}
+
+.buttonContainer{
+    padding-left: var(--space-2);
+}
+
+.crumbs{
+    padding-left: var(--space-2);
 }
 
 .container{
@@ -89,6 +128,9 @@ html{
     display: flex;
     gap: 20px;
     justify-content: center;
+    width: 100%;
+    background-color: var(--color-fg);
+    padding: 18px;
 }
 
 .site-nav_link{
@@ -97,6 +139,48 @@ html{
     padding: 10px 15px;
     border-radius: 5px;
     transition: var(--color-bg) 0.3s;
+}
+
+.aboutBox{
+    width: 80%;
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    padding: 0 10% 0 2px;
+}
+
+.boxHeader {
+    background-color: var(--color-boxHeader);
+    margin: 0;
+    padding: 10px;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 3px solid #000000;
+    border-right: transparent;
+    color: var(--color-primary);
+}
+
+.boxContent {
+    display: flex;
+    background-color: var(--color-boxBg);
+    padding-top: 5px;
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
+    height: 100%;
+    align-content: center;
+    border: 3px solid #000000;
+    width: 100%;
+    color: var(--color-fg);
+}
+
+.infoContainer {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section{
@@ -109,9 +193,9 @@ html{
 #header .menu .item a{color: #333;}
 
 header{
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.499), rgba(0, 0, 0, 0.175)),
-    url("assets/beer_bg.jpg") center;
-    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+    var(--header-image) center;
+    background-size: 120%;
 }
 
 *{box-sizing: border-box;}
@@ -202,8 +286,11 @@ dialog::backdrop {
     justify-self: center;
     width: 125px;
     height: 30px;
-    background-color: var(--color-fg);
+    background-color: var(--color-boxBg);
+}
 
+p{
+    padding-left: var(--space-2);
 }
 
 ul{
@@ -215,22 +302,12 @@ ul{
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     width: 600px;
+    height: 100%;
     justify-self: center;
 }
 
 ul{
     anchor-name: --my-carousel;
-}
-
-ul::scroll-marker-group{
-    position: absolute;
-    position-anchor: --my-carousel;
-    top: calc(anchor(bottom) - 70px);
-    justify-self: anchor-center;
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }
 
 ul::-webkit-scrollbar{
@@ -280,11 +357,13 @@ ul::scroll-button(*):disabled{
 
 ul::scroll-button(left){
     content: "◄";
+    color: var(--color-fg);
     right: calc(anchor(left) - 45px);
 }
 
 ul::scroll-button(right){
     content: "►";
+    color: var(--color-fg);
     left: calc(anchor(right) - 45px);
 }
 
@@ -298,6 +377,11 @@ ul::scroll-button(right){
 
 #drinkWindow {
     width: 600px;
+    background-color: var(--color-bg);
+}
+
+.drinkLabel {
+    color: var(--color-boxContent);
 }
 
 .close{
@@ -312,7 +396,7 @@ ul::scroll-button(right){
     display: flex;
     justify-content: center;
     cursor: pointer;
-    color: var(--color-primary);
+    color: var(--color-fg);
     z-index: 10;
     outline: none;
 }
@@ -334,7 +418,7 @@ ul::scroll-button(right){
 
 #modalText {
     font-size: 1.3rem;
-    color: var(--color-primary);
+    color: var(--color-fg);
     text-align: center;
 }
 
@@ -350,5 +434,9 @@ ul::scroll-button(right){
     display: flex;
     justify-self: center;
     font-size: 1.3rem;
-    background-color: var(--color-fg);
+    background-color: var(--color-fg);  
+}
+
+p {
+    color: var(--color-fg);
 }
