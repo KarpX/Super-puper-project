@@ -1,108 +1,167 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <script src="./scripts/themeToggle.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты – Пивляндия</title>
+    <meta name="description" content="Связь с нами" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-   <script src="main.js" defer></script>
-   <link rel="stylesheet" href="styles.css">
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Скопируйте весь блок <head> из index.html -->
-   <title>О нас - Название вашего сайта</title>
-   <meta name="description" content="Связаться с нами">
-   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-</head>
-
-<body>
-   <header class="site_header">
-      <div class="container">
-         <a href="index.html">
-            <img src="assets/beer_king.png" alt="Логотип" width="200px" , height="200px">
-         </a>
+  <body>
+    <div class="container-fluid p-0">
+      <header class="text-white py-0">
+        <div class="container-fluid text-center">
+          <a href="index.html">
+            <img
+              src="assets/beer_king.png"
+              alt="Логотип"
+              width="200px"
+              height="200px"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-2 sticky-top">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav px-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              ><i class="bi bi-house me-1"></i>Главная</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">
+              <i class="bi bi-info-circle me-1"></i>О нас
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contacts.html">
+              <i class="bi bi-telephone me-1"></i>Контакты
+            </a>
+          </li>
+          <li>
+            <button id="themeToggle" class="btn btn-primary">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-
-      <nav class="site-nav_div">
-         <a class="site-nav_link" href="index.html">Главная</a>
-         <a class="site-nav_link" href="about.html">О нас</a>
-         <a class="site-nav_link" href="contacts.html">Контакты</a>
-      </nav>
-   </header>
-   <main>
+    </nav>
+    <main>
       <!-- Простые "хлебные крошки" -->
       <nav class="crumbs" aria-label="Хлебные крошки">
-         <a href="index.html">Главная</a> →
-         <span>Контакты</span>
+        <a href="index.html">Главная</a> →
+        <span>Контакты</span>
       </nav>
       <h1>Наши контакты</h1>
       <section>
-         <p>Email: pivlandia@gmail.com</p>
-         <div class="buttonContainer">
-            <button class="button" id="openDialog" type="button">Написать нам</button>
-            <dialog id="contactDialog" aria-labelledby="dialogTitle">
-               <h2 id="dialogTitle">Обратная связь</h2>
+        <p>Email: pivlandia@gmail.com</p>
+        <div class="buttonContainer">
+          <button class="button" id="openDialog" type="button">
+            Написать нам
+          </button>
+          <dialog id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Обратная связь</h2>
 
-               <form id="contactForm" method="dialog" novalidate>
-                  <label for="name">Имя</label>
-                  <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+            <form id="contactForm" method="dialog" novalidate>
+              <label for="name">Имя</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                minlength="2"
+                autocomplete="given-name"
+              />
 
-                  <lable for="email">E-mail</lable>
-                  <input id="email" name="email" type="email" required autocomplete="email">
+              <lable for="email">E-mail</lable>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+              />
 
-                  <label for="phone">Телефон</label>
-                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-                     aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required
-                     pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-d{2}$">
-                  <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+              <label for="phone">Телефон</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                aria-describedby="phoneHelp"
+                placeholder="+7 (___) ___-__-__"
+                required
+                pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-d{2}$"
+              />
+              <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
 
-                  <label for="date">Дата</label>
-                  <input id="'date" name="date" type="date">
+              <label for="date">Дата</label>
+              <input id="'date" name="date" type="date" />
 
-                  <label for="topic">Тема обращения</label>
-                  <select id="topic" name="topic" required>
-                     <option value="">Выберите тему</option>
-                     <option>Вопрос</option>
-                     <option>Заказ</option>
-                  </select>
+              <label for="topic">Тема обращения</label>
+              <select id="topic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option>Вопрос</option>
+                <option>Заказ</option>
+              </select>
 
-                  <label for="message">Сообщение</label>
-                  <textarea id="message" name="message" rows="4" required></textarea>
+              <label for="message">Сообщение</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
 
-                  <div class="form-actions">
-                     <button class="button" type="button" , id="closeDialog">Закрыть</button>
-                     <button class="button" type="submit">Отправить</button>
-                  </div>
-               </form>
-            </dialog>
-         </div>
-
+              <div class="form-actions">
+                <button class="button" type="button" , id="closeDialog">
+                  Закрыть
+                </button>
+                <button class="button" type="submit">Отправить</button>
+              </div>
+            </form>
+          </dialog>
+        </div>
       </section>
 
       <div class="emptyContainer"></div>
-   </main>
-   <footer>
+    </main>
+    <footer>
       <div class="buttonContainer">
-         <button class="theme-toggle button" type="button" aria-pressed="false" >Сменить
-            тему</button>
-         <script defer>
-            const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-            // Автовыбор: системная тема или сохранённый выбор пользователя
-            if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-               prefersDark)) {
-               document.body.classList.add('theme-dark');
-               btn?.setAttribute('aria-pressed', 'true');
-            }
-            // Переключение по кнопке с сохранением в localStorage
-            btn?.addEventListener('click', () => {
-               const isDark = document.body.classList.toggle('theme-dark');
-               btn.setAttribute('aria-pressed', String(isDark));
-               localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-            });
-         </script>
+        <button class="theme-toggle button" type="button" aria-pressed="false">
+          Сменить тему
+        </button>
       </div>
 
       <p>Телефон: +8 (800) 555-35-35</p>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
-   </footer>
-</body>
-
+    </footer>
+  </body>
 </html>

@@ -1,149 +1,234 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <script src="main.js" defer></script>
-    <script src="drinkWindow.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/drinkWindow.js" defer></script>
+    <script src="./scripts/themeToggle.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Пивляндия</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-</head>
+    <meta name="description" content="Самое лучшее пиво в Пивляндии" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
-    
-    <header class="site_header">
-        <div class="container">
-            <a href="index.html">
-                <img src="assets/beer_king.png" alt="Логотип" width="200px" , height="200px">
+  <body>
+    <div class="container-fluid p-0">
+      <header class="text-white py-0">
+        <div class="container-fluid text-center">
+          <a href="index.html">
+            <img
+              src="assets/beer_king.png"
+              alt="Логотип"
+              width="200px"
+              height="200px"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-2 sticky-top">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav px-2">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"
+              ><i class="bi bi-house me-1"></i>Главная</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">
+              <i class="bi bi-info-circle me-1"></i>О нас
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">
+              <i class="bi bi-telephone me-1"></i>Контакты
+            </a>
+          </li>
+          <li>
+            <button id="themeToggle" class="btn btn-primary">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section>
+        <h2>Наши напитки</h2>
+        <div id="beerCarousel" class="carousel slide">
+          <div>
+            <button
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Лагер"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide-to="1"
+              aria-label="Тёмный лагер"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide-to="2"
+              aria-label="Эль"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide-to="3"
+              aria-label="Ламбик"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active justify-content-center">
+              <img src="assets/lager.png" class="d-block w-200" alt="Лагер" 
+              data-title="Лагер" 
+              data-text="Светлое пиво из Германии. Сварено по классическому баварскому
+                  рецепту. Гармоничный солодовый вкус и мягкое послевкусие с
+                  горчинкой хмеля. Пена плотная и пышная. Идеально подходит к
+                  мясным блюдам и копчёностям."
+              data-alcohol-percent="Содержание алкоголя — 4,9%"
+              data-img="assets/lager.png"/>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Лагер</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/dark_lager.png" class="d-block" alt="Тёмный лагер" 
+              data-title="Темный лагер"
+              data-text="Классический темный лагер в стиле Шварцбир, обладающий характерным бархатистым вкусом с солодово-кофейными тонами и гармоничной хмелевой горечью. В его составе — поджаренный ячменный солод, хмель и дрожжи. Благодаря такой рецептуре, лагер получает аутентичный, натуральный вкус."
+              data-alcohol-percent="Содержание алкоголя — 4,7%"
+              data-img="assets/dark_lager.png"/>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Тёмный лагер</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/el.png" class="d-block" alt="Эль" 
+              data-title="Эль"
+              data-text='Насыщенный, нефильтрованный золотой эль из линейки "Европейская классика", выполненный в стиле Belgian Blond Ale. Пиво изготавливается из пшеничного солода, бельгийского ячменного солода, жатецкого хмеля, кориандра и дрожжей. Оно обладает тонким эфирным ароматом с нотками специй, который создают бельгийские дрожжи. Крепость пива дает ощутимый согревающий эффект и стимулирует рецепторы, но не перегружает их. "Блонд Эль" станет идеальным сопровождением изысканных блюд из морепродуктов, рыбы и мяса птицы.'
+              data-alcohol-percent="Содержание алкоголя — 6%"
+              data-img="assets/el.png"/>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Эль</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/lambic.png" class="d-block" alt="Ламбик" 
+              data-title="Ламбик"
+              data-text="Традиционная нефильтрованная смесь ламбиков собственного приготовления Ламбик Фабрик, полученная в результате спонтанного брожения."
+              data-alcohol-percent="Содержание алкоголя — 6,3%"
+              data-img="assets/lambic.png"/>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Ламбик</h5>
+              </div>
+            </div>
         </div>
 
-        <nav class="site-nav_div">
-            <a class="site-nav_link" href="index.html">Главная</a>
-            <a class="site-nav_link" href="about.html">О нас</a>
-            <a class="site-nav_link" href="contacts.html">Контакты</a>
-        </nav>
-    </header>
-    
-    <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
-        <section id="beerCarousel">
-            <h2>Наши напитки</h2>
-            <ul class="carousel">
-                <li class="card" data-title="Лагер"
-                    data-text="Светлое пиво из Германии. Сварено по классическому баварскому рецепту. Гармоничный солодовый вкус и мягкое послевкусие с горчинкой хмеля. Пена плотная и пышная. Идеально подходит к мясным блюдам и копчёностям."
-                    data-alcohol-percent="Содержание алкоголя — 4,9%" data-img="assets/lager.png">
-                    <img class="slide" src="assets/lager.png" alt="Лагер" width="200" height="200">
-                    <div class="labelContainer">
-                        <a class="drinkLabel">Лагер</a>
-                    </div>
-                </li>
-                <li class="card" data-title="Темный лагер"
-                    data-text="Классический темный лагер в стиле Шварцбир, обладающий характерным бархатистым вкусом с солодово-кофейными тонами и гармоничной хмелевой горечью. В его составе — поджаренный ячменный солод, хмель и дрожжи. Благодаря такой рецептуре, лагер получает аутентичный, натуральный вкус."
-                    data-alcohol-percent="Содержание алкоголя — 4,7%" data-img="assets/dark_lager.png">
-                    <img class="slide" src="assets/dark_lager.png" alt="Тёмный лагер" width="200" height="200">
-                    <div class="labelContainer">
-                        <a class="drinkLabel">Темный лагер</a>
-                    </div>
-                </li>
-                <li class="card" data-title="Эль"
-                    data-text='Насыщенный, нефильтрованный золотой эль из линейки "Европейская классика", выполненный в стиле Belgian Blond Ale. Пиво изготавливается из пшеничного солода, бельгийского ячменного солода, жатецкого хмеля, кориандра и дрожжей. Оно обладает тонким эфирным ароматом с нотками специй, который создают бельгийские дрожжи. Крепость пива дает ощутимый согревающий эффект и стимулирует рецепторы, но не перегружает их. "Блонд Эль" станет идеальным сопровождением изысканных блюд из морепродуктов, рыбы и мяса птицы.'
-                    data-alcohol-percent="Содержание алкоголя — 6%" data-img="assets/el.png">
-                    <img class="slide" src="assets/el.png" alt="Эль" width="200" height="200">
-                    <div class="labelContainer">
-                        <a class="drinkLabel">Эль</a>
-                    </div>
-                </li>
-                <li class="card" data-title="Ламбик"
-                    data-text="Традиционная нефильтрованная смесь ламбиков собственного приготовления Ламбик Фабрик, полученная в результате спонтанного брожения."
-                    data-alcohol-percent="Содержание алкоголя — 6,3%" data-img="assets/lambic.png">
-                    <img class="slide" src="assets/lambic.png" alt="Ламбик" width="200" height="200">
-                    <div class="labelContainer">
-                        <a class="drinkLabel">Ламбик</a>
-                    </div>
-                </li>
-
-            </ul>
-
-            <dialog id="drinkWindow">
-                <div class="modalContent">
-                    <button id="closeModal" class="close">&times;</button>
-                    <h2 id="modalTitle"></h2>
-                    <img id="modalImg" src="" alt="" />
-                    <div class="modalTextContainer">
-                        <p id="modalText"></p>
-                    </div>
-                    <div class="emptyContainer"></div>
-                    <div class="alcoholPercentContainer">
-                        <p id="alcoholPercentText" style="color: var(--color-primary);"></p>
-                    </div>
-                </div>
-            </dialog>
-
-        </section>
-
-        <div class="emptyContainer"></div>
-        <section id="portfolio">
-            <div class="media">
-                <iframe src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1" width="853"
-                    height="480" style="background-color: #000"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0"
-                    allowfullscreen></iframe>
+        <dialog id="drinkWindow">
+          <div class="modalContent">
+            <button id="closeModal" class="close">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImg" src="" alt="" />
+            <div class="modalTextContainer">
+              <p id="modalText"></p>
             </div>
-        </section>
-
-        <div class="emptyContainer"></div>
-        <section id="contacts">
-            <h2>Контактная информация</h2>
-            <section class="contactsList">
-                <div class="contact-container">
-                    <img src="./assets/icons/email-ico.png" width="32" height="32" loading="lazy">
-                    <p style="margin: 3px;">Email: pivlandia@gmail.com</p>
-                </div>
-                <div class="contact-container">
-                    <img src="./assets/icons/phone-ico.png" width="32" height="32" loading="lazy">
-                    <p style="margin: 3px;">+8 (800) 555-35-35</p>
-                </div>
-            </section>
-            <aside>
-                <h2>Как нас найти?</h2>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d10687a501ebed59d46d95909e255e36285ace1c717b8e2d4d8e9fe80575933&amp;source=constructor" width="425" height="300" frameborder="0" loading="lazy"></iframe>
-            </aside>
             <div class="emptyContainer"></div>
-            <div class="buttonContainer">
-                <a class="site-nav_link" href="contacts.html">Подробнее</a>
+            <div class="alcoholPercentContainer">
+              <p
+                id="alcoholPercentText"
+                style="color: var(--color-primary)"
+              ></p>
             </div>
+          </div>
+        </dialog>
+      </section>
+
+      <div class="emptyContainer"></div>
+      <section id="portfolio">
+        <div class="media">
+          <iframe
+            src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1"
+            width="853"
+            height="480"
+            style="background-color: #000"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <div class="emptyContainer"></div>
+      <section id="contacts">
+        <h2>Контактная информация</h2>
+        <section class="contactsList">
+          <div class="contact-container">
+            <img
+              src="./assets/icons/email-ico.png"
+              width="32"
+              height="32"
+              loading="lazy"
+            />
+            <p style="margin: 3px">Email: pivlandia@gmail.com</p>
+          </div>
+          <div class="contact-container">
+            <img
+              src="./assets/icons/phone-ico.png"
+              width="32"
+              height="32"
+              loading="lazy"
+            />
+            <p style="margin: 3px">+8 (800) 555-35-35</p>
+          </div>
         </section>
+        <aside>
+          <h2>Как нас найти?</h2>
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d10687a501ebed59d46d95909e255e36285ace1c717b8e2d4d8e9fe80575933&amp;source=constructor"
+            width="425"
+            height="300"
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </aside>
         <div class="emptyContainer"></div>
+        <div class="buttonContainer">
+          <a class="site-nav_link" href="contacts.html">Подробнее</a>
+        </div>
+      </section>
+      <div class="emptyContainer"></div>
     </main>
 
     <footer>
-        <div class="buttonContainer">
-            <button class="theme-toggle button" type="button" aria-pressed="false">Сменить
-                тему</button>
-            <script defer>
-                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-
-                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-                    prefersDark)) {
-                    document.body.classList.add('theme-dark');
-                    btn?.setAttribute('aria-pressed', 'true');
-                }
-
-                btn?.addEventListener('click', () => {
-                    const isDark = document.body.classList.toggle('theme-dark');
-                    btn.setAttribute('aria-pressed', String(isDark));
-                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-                });
-            </script>
-        </div>
-        <p>Телефон: +8 (800) 555-35-35</p>
-        <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
+      <p>Телефон: +8 (800) 555-35-35</p>
+      <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>
-</body>
-
+  </body>
 </html>
