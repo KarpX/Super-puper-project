@@ -45,14 +45,67 @@ button.btn.btn-primary:active {
   filter: brightness(0.75);
 }
 
+.carousel {
+  justify-self: center;
+  width: 20%;
+}
+
 .carousel-caption {
+  justify-self: center;
+  width: 25%;
+  padding: 1%;
   background-color: var(--bs-primary);
 }
 
-.carousel-item {
-  background-color: black;
+.carousel-item img {
+  justify-self: center;
+  width: 200px;
+  height: 100%;
 }
 
 .carousel-inner {
-  width: 60%;
+  justify-self: center;
+}
+
+.carousel-indicators {
+  justify-self: center;
+  width: 40%;
+}
+
+.card-label {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#portfolio {
+  padding: 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+.card {
+  align-items: center;
+  padding: 15px;
+  gap: 10p;
+  color: white;
+  width: 15%;
+}
+
+.contacts-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
