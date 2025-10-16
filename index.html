@@ -196,7 +196,7 @@
             ><span class="visually-hidden">Next</span>
           </button>
 
-          <dialog id="drinkWindow">
+          <!-- <dialog id="drinkWindow">
             <div class="modalContent">
               <button id="closeModal" class="close">&times;</button>
               <h2 id="modalTitle"></h2>
@@ -212,7 +212,29 @@
                 ></p>
               </div>
             </div>
-          </dialog>
+          </dialog> -->
+
+          <div class="modal fade" id="drinkWindow" aria-hidden="true" aria-labelledby="drinkWindowLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="drinkWindowLabel"></h2>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img id="modalImg" src="" alt="" class="img-fluid mb-3"/>
+                  <div class="modalTextContainer">
+                    <p id="modalText"></p>
+                  </div>
+                  <div class="emptyContainer"></div>
+                  <div class="alcoholPercentContainer">
+                    <p
+                      class="text-dark"
+                      id="alcoholPercentText"
+                      style="color: var(--color-primary)"
+                    ></p>
+                  </div>
+          </div>
         </div>
       </section>
 
@@ -268,7 +290,7 @@
       <div class="emptyContainer"></div>
     </main>
 
-    <footer class="bg-dark text-white">
+    <footer class="text-center py-3 bg-dark text-white">
       <p>Телефон: +8 (800) 555-35-35</p>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>

@@ -25,7 +25,7 @@ header {
 }
 
 .emptyContainer {
-  height: 70px;
+  height: 45px;
 }
 
 .btn-primary {
@@ -52,7 +52,7 @@ button.btn.btn-primary:active {
 
 .carousel-caption {
   justify-self: center;
-  width: 25%;
+  width: 40%;
   padding: 1%;
   background-color: var(--bs-primary);
 }
@@ -108,4 +108,58 @@ h2 {
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.modal-header {
+  height: 80px;
+  align-items: baseline;
+}
+
+.modal-body {
+  padding: 45px;
+  justify-items: center;
+}
+
+#modalText {
+  text-align: center;
+  border: 2px solid var(--bs-primary);
+  padding: 10px;
+}
+
+#alcoholPercentText {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--bs-primary);
+  font-weight: 700;
+}
+
+.card-aboutBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  border: 5px solid var(--bs-primary);
+  border-radius: 10px;
+  width: 30%;
+  color: var(--bs-fg);
+}
+
+.aboutBoxesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.card-aboutBox .boxContent {
+  text-align: center;
+  font-size: large;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
 }

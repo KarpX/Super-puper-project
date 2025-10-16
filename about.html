@@ -47,20 +47,20 @@
         class="collapse navbar-collapse justify-content-center"
         id="navbarNav"
       >
-        <ul class="navbar-nav px-2">
+        <ul class="navbar-nav px-2 gap-3">
           <li class="nav-item">
             <a class="nav-link" href="index.html"
-              ><i class="bi bi-house me-1"></i>Главная</a
+              ><i class="bi bi-house me-2"></i>Главная</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="about.html">
-              <i class="bi bi-info-circle me-1"></i>О нас
+              <i class="bi bi-info-circle me-2"></i>О нас
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contacts.html">
-              <i class="bi bi-telephone me-1"></i>Контакты
+              <i class="bi bi-telephone me-2"></i>Контакты
             </a>
           </li>
           <li>
@@ -72,14 +72,16 @@
       </div>
     </nav>
     <main>
-      <!-- Простые "хлебные крошки" -->
-      <nav class="crumbs" aria-label="Хлебные крошки">
-        <a href="index.html">Главная</a> →
-        <span>О нас</span>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mx-2">
+          <li class="breadcrumb-item">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">О нас</li>
       </nav>
       <h1>О нашей компании</h1>
-      <div class="infoContainer">
-        <div class="aboutBox">
+      <div class="container-fluid aboutBoxesContainer">
+        <div class="card card-aboutBox bg-dark text-white">
           <h2 class="boxHeader">Наша история</h2>
           <p class="boxContent">
             В далеком 1886 году два брата решили сделать мир более счастливым.
@@ -94,23 +96,14 @@
         </div>
 
         <div
-          class="aboutBox"
-          style="flex-direction: row-reverse; padding: 0 2px 0 10%"
+          class="card card-aboutBox bg-dark text-white"
         >
           <h2
             class="boxHeader"
-            style="
-              border-top-right-radius: 10px;
-              border-bottom-right-radius: 10px;
-              border-right: 3px solid #000000;
-              border-top-left-radius: 0;
-              border-bottom-left-radius: 0;
-              border-left: transparent;
-            "
           >
             Наша команда
           </h2>
-          <p class="boxContent" style="text-align: end">
+          <p class="boxContent">
             Наши самые главные любители пива собрались вместе для того, чтобы
             подарить Вам билет в невероятное путешествие по стране жидкого
             золота. Мы трепетно относимся к каждому товарищу и клиенту. Нам
@@ -121,33 +114,7 @@
 
       <div class="emptyContainer"></div>
     </main>
-    <footer>
-      <div class="buttonContainer">
-        <button class="theme-toggle button" type="button" aria-pressed="false">
-          Сменить тему
-        </button>
-        <script defer>
-          const KEY = "theme",
-            btn = document.querySelector(".theme-toggle");
-          const prefersDark = matchMedia(
-            "(prefers-color-scheme: dark)"
-          ).matches;
-
-          if (
-            localStorage.getItem(KEY) === "dark" ||
-            (!localStorage.getItem(KEY) && prefersDark)
-          ) {
-            document.body.classList.add("theme-dark");
-            btn?.setAttribute("aria-pressed", "true");
-          }
-
-          btn?.addEventListener("click", () => {
-            const isDark = document.body.classList.toggle("theme-dark");
-            btn.setAttribute("aria-pressed", String(isDark));
-            localStorage.setItem(KEY, isDark ? "dark" : "light");
-          });
-        </script>
-      </div>
+    <footer class="text-center py-3 bg-dark text-white">
       <p>Телефон: +8 (800) 555-35-35</p>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>
