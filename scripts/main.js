@@ -1,42 +1,41 @@
-const dlg = document.getElementById('contactDialog');
-const openBtn = document.getElementById('openDialog');
-const closeBtn = document.getElementById('closeDialog');
-const form = document.getElementById('contactForm');
+const openBtn = document.getElementById("openDialog");
+const modalW = document.getElementById("contactModal");
+const dlg = new bootstrap.Modal(modalW);
+const form = document.getElementById("contactForm");
 let lastActive = null;
 
-openBtn.addEventListener('click', () => {
-    lastActive = document.activeElement;
-    dlg.showModal();
-    dlg.querySelector('input, select, textarea, button')?.focus();
+openBtn.addEventListener("click", () => {
+  lastActive = document.activeElement;
+  dlg.show();
+  modalW.querySelector("input, select, textarea, button")?.focus();
 });
 
-closeBtn.addEventListener('click', () => dlg.close("cancel"));
+form?.addEventListener("submit", (e) => {
+  [...form.elements].forEach((el) => el.setCustomValidity?.(""));
 
-form?.addEventListener('submit', (e) => {
+  if (!form.checkValidity()) {
+    e.preventDefault();
 
-[...form.elements].forEach(el => el.setCustomValidity?.(''));
+    const email = form.elements.email;
+    if (email?.validity.typeMismatch) {
+      email.setCustomValidity(
+        "Введите корректный e-mail, например name@example.com"
+      );
+    }
+    form.reportValidity();
+    [...form.elements].forEach((el) => {
+      if (el.willValidate)
+        el.toggleAttribute("aria-invalid", !el.checkValidity());
+    });
+    return;
+  }
 
-if (!form.checkValidity()) {
-e.preventDefault();
+  e.preventDefault();
 
-const email = form.elements.email;
-if (email?.validity.typeMismatch) {
-email.setCustomValidity('Введите корректный e-mail, например name@example.com');
-}
-form.reportValidity();
-[...form.elements].forEach(el => {
-if (el.willValidate) el.toggleAttribute('aria-invalid',
-!el.checkValidity());
+  dlg.hide();
+  form.reset();
 });
-return;
-}
 
-e.preventDefault();
-
-document.getElementById('contactDialog')?.close('success');
-form.reset();
+modalW.addEventListener("close", () => {
+  lastActive?.focus();
 });
-
-dlg.addEventListener('close', () => {
-    lastActive?.focus();
-})

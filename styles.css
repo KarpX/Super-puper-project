@@ -1,7 +1,18 @@
 :root {
   --header-image: url("./assets/beer_bg.jpg");
   --bs-primary: #ffbf00;
+  --bs-bg-gradient-to: #cf9b00;
+  --bs-bg-gradient-from: #ffbf00;
   --bs-fg: #463730e5;
+}
+
+html,
+body {
+  position: relative;
+}
+
+a {
+  color: black;
 }
 
 img {
@@ -30,6 +41,11 @@ header {
 
 .btn-primary {
   background-color: transparent;
+  border-color: var(--bs-primary);
+}
+
+.btn-submit {
+  background-color: var(--bs-primary);
   border-color: var(--bs-primary);
 }
 
@@ -79,9 +95,8 @@ button.btn.btn-primary:active {
 }
 
 #portfolio {
-  padding: 40px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
@@ -105,9 +120,10 @@ h2 {
 
 .mapContainer {
   display: flex;
-  justify-content: center;
+  justify-self: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 50%;
 }
 
 .modal-header {
@@ -139,7 +155,7 @@ h2 {
   align-items: center;
   padding: 20px;
   margin: 20px;
-  border: 5px solid var(--bs-primary);
+  border: 5px solid var(--bs-fg);
   border-radius: 10px;
   width: 30%;
   color: var(--bs-fg);
@@ -162,4 +178,30 @@ h2 {
 h1 {
   text-align: center;
   padding: 20px;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--bs-bg-gradient-from),
+    var(--bs-bg-gradient-to)
+  );
+  height: 100%;
+}
+
+.site-nav_link {
+  display: flex;
+  justify-self: center;
+  font-size: 24px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.media {
+  width: 70%;
 }
