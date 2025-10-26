@@ -1,84 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <script src="./scripts/themeToggle.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О нас – Пивляндия</title>
+    <meta name="description" content="Узнайте больше о нашей истории" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Скопируйте весь блок <head> из index.html -->
-    <title>О нас - Название вашего сайта</title>
-    <meta name="description" content="Узнайте больше о нашей компании и истории">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-</head>
-
-<body>
-    <header class="site_header">
-        <div class="container">
-            <a href="index.html">
-                <img src="assets/beer_king.png" alt="Логотип" width="200px" , height="200px">
+  <body>
+    <div class="container-fluid p-0">
+      <header class="text-white py-0">
+        <div class="container-fluid text-center">
+          <a href="index.html">
+            <img
+              src="assets/beer_king.png"
+              alt="Логотип"
+              width="200px"
+              height="200px"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-2 sticky-top">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav px-2 gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              ><i class="bi bi-house me-2"></i>Главная</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">
+              <i class="bi bi-info-circle me-2"></i>О нас
             </a>
-        </div>
-
-        <nav class="site-nav_div">
-            <a class="site-nav_link" href="index.html">Главная</a>
-            <a class="site-nav_link" href="about.html">О нас</a>
-            <a class="site-nav_link" href="contacts.html">Контакты</a>
-        </nav>
-    </header>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">
+              <i class="bi bi-telephone me-2"></i>Контакты
+            </a>
+          </li>
+          <li>
+            <button id="themeToggle" class="btn btn-primary">
+              <i class="bi bi-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <main>
-        <!-- Простые "хлебные крошки" -->
-        <nav class="crumbs" aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
-        </nav>
-        <h1>О нашей компании</h1>
-        <div class="infoContainer">
-            <div class="aboutBox">
-                <h2 class="boxHeader">Наша история</h2>
-                <p class="boxContent">В далеком 1886 году два брата решили сделать мир более счастливым. Для этого они
-                    отправились в
-                    далекие земли, чтобы узнать рецепты самых главных зелий счастья. Объехав весь мир, они вернулись
-                    домой и начали готовиться к революции в питейном деле. Поначалу их воспринимали как чудаков,
-                    непонимающих, что они творят. Но вот прошло уже больше 100 лет, а их самое главное достижение –
-                    жидкое золото, или же пиво, – до сих пор остается напитком, который дарит людям радость и счастье
-                </p>
-            </div>
-
-            <div class="aboutBox" style="flex-direction: row-reverse; padding: 0 2px 0 10%;">
-                <h2 class="boxHeader" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-right: 3px solid #000000; border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: transparent;">Наша команда</h2>
-                <p class="boxContent" style="text-align: end;">Наши самые главные любители пива собрались вместе для того, чтобы подарить Вам
-                    билет в невероятное путешествие по стране жидкого золота. Мы трепетно относимся к каждому товарищу и
-                    клиенту. Нам очень важно, чтобы всем было комфортно</p>
-            </div>
-
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mx-2">
+          <li class="breadcrumb-item">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">О нас</li>
+        </ol>
+      </nav>
+      <h1>О нашей компании</h1>
+      <div class="container-fluid aboutBoxesContainer">
+        <div class="card card-aboutBox bg-dark text-white">
+          <h2 class="boxHeader">Наша история</h2>
+          <p class="boxContent">
+            В далеком 1886 году два брата решили сделать мир более счастливым.
+            Для этого они отправились в далекие земли, чтобы узнать рецепты
+            самых главных зелий счастья. Объехав весь мир, они вернулись домой и
+            начали готовиться к революции в питейном деле. Поначалу их
+            воспринимали как чудаков, непонимающих, что они творят. Но вот
+            прошло уже больше 100 лет, а их самое главное достижение – жидкое
+            золото, или же пиво, – до сих пор остается напитком, который дарит
+            людям радость и счастье
+          </p>
         </div>
 
-        <div class="emptyContainer"></div>
+        <div class="card card-aboutBox bg-dark text-white">
+          <h2 class="boxHeader">Наша команда</h2>
+          <p class="boxContent">
+            Наши самые главные любители пива собрались вместе для того, чтобы
+            подарить Вам билет в невероятное путешествие по стране жидкого
+            золота. Мы трепетно относимся к каждому товарищу и клиенту. Нам
+            очень важно, чтобы всем было комфортно
+          </p>
+        </div>
+      </div>
+
+      <div class="emptyContainer"></div>
     </main>
-    <footer>
-        <div class="buttonContainer">
-            <button class="theme-toggle button" type="button" aria-pressed="false">Сменить
-                тему</button>
-            <script defer>
-                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-
-                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-                    prefersDark)) {
-                    document.body.classList.add('theme-dark');
-                    btn?.setAttribute('aria-pressed', 'true');
-                }
-
-                btn?.addEventListener('click', () => {
-                    const isDark = document.body.classList.toggle('theme-dark');
-                    btn.setAttribute('aria-pressed', String(isDark));
-                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-                });
-            </script>
-        </div>
-        <p>Телефон: +8 (800) 555-35-35</p>
-        <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
+    <footer class="text-center py-3 bg-dark text-white">
+      <p>Телефон: +8 (800) 555-35-35</p>
+      <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>
-</body>
-
+  </body>
 </html>
