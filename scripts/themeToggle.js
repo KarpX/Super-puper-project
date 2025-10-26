@@ -11,6 +11,7 @@ if (
 }
 
 btn?.addEventListener("click", () => {
+  console.log("clicked!!!!!");
   const isDark = document.body.classList.toggle("theme-dark");
   btn.setAttribute("aria-pressed", String(isDark));
   localStorage.setItem(KEY, isDark ? "dark" : "light");
