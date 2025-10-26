@@ -3,7 +3,6 @@ const modalTitle = document.getElementById("drinkWindowLabel");
 const modalText = document.getElementById("modalText");
 const modalAlcoholPercent = document.getElementById("alcoholPercentText");
 const modalImg = document.getElementById("modalImg");
-console.log("loaded");
 document.querySelectorAll(".carousel-item").forEach((card) => {
   card.addEventListener("click", () => {
     console.log("clicked");
