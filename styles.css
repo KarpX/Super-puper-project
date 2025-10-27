@@ -1,18 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Poiret+One&family=Roboto:wght@700&display=swap");
+
+@media (max-width: 990px) {
+  .navbar-collapse {
+    background-color: var(--navbar-color);
+    padding: 10px;
+  }
+}
+
 :root {
   color-scheme: light;
-  --header-image: url("./assets/beer_bg.jpg");
+  --header-image: url("./assets/header-bg.jpg");
   --bs-primary: #ffbf00;
-  --bs-bg-gradient-to: #cf9b00;
-  --bs-bg-gradient-from: #ffbf00;
+  --bs-bg-gradient-to: #e5e5e5;
+  --bs-bg-gradient-from: #fefefe;
+  --bg-color: #e5e5e5;
   --bs-fg: #463730e5;
   --text-color: rgb(33, 37, 41);
   --text-color-card: rgb(234, 233, 226);
   --card-color: rgb(33, 37, 41);
   --navbar-color: rgb(33, 37, 41);
+  --navbar-height: 76px;
 }
 
 body.theme-dark {
-  --header-image: url("./assets/beer_bg_dark_theme2.png");
+  --header-image: url("./assets/header-bg.jpg");
   --bs-primary: #603c1b;
   --bs-bg-gradient-to: #593818;
   --bs-bg-gradient-from: #533317;
@@ -24,7 +35,25 @@ body.theme-dark {
 
 html,
 body {
+  width: 100%;
+  margin-top: 38px;
   position: relative;
+  font-family: "Arsenal SC", "Times New Roman", sans-serif;
+}
+
+.quote {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  color: #e5e5e5;
+}
+
+.quote-container {
+  margin-left: 5%;
+  display: flex;
+  align-self: center;
+  width: 40%;
+  margin-bottom: 60px;
 }
 
 h1,
@@ -54,14 +83,30 @@ img {
   -webkit-user-drag: none;
 }
 header {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
-    var(--header-image) center;
-  background-size: 125%;
+  display: flex;
+  background: var(--header-image) center;
+  background-size: cover;
+  height: 500px;
 }
 
 .navbar {
+  display: flex;
   background-color: var(--navbar-color);
-  --navbar-height: 70px;
+  height: var(--navbar-height);
+  align-items: center;
+}
+
+.navbar-collapse {
+  justify-content: space-around;
+  margin-right: 110px;
+}
+
+.navbar-toggler {
+  margin-left: 10px;
+}
+
+.logo {
+  padding-left: 20px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before,
@@ -171,6 +216,15 @@ h2 {
   width: 50%;
 }
 
+section {
+  scroll-margin-top: var(--navbar-height);
+}
+
+.modalWindow {
+  padding: 30px;
+  justify-self: center;
+}
+
 .modal-header {
   height: 80px;
   align-items: baseline;
@@ -226,11 +280,7 @@ h1 {
 }
 
 body {
-  background: linear-gradient(
-    to bottom,
-    var(--bs-bg-gradient-from),
-    var(--bs-bg-gradient-to)
-  );
+  background: var(--bg-color);
   height: 100%;
 }
 

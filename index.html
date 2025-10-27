@@ -24,19 +24,12 @@
   <body>
     <div class="container-fluid p-0">
       <header class="text-white py-0">
-        <div class="container-fluid text-center">
-          <a href="index.html">
-            <img
-              src="assets/beer_king.png"
-              alt="Логотип"
-              width="200px"
-              height="200px"
-            />
-          </a>
+        <div class="container-fluid quote-container">
+          <h1 class="quote">Ничто так не согревает душу, как холодное пиво</h1>
         </div>
       </header>
     </div>
-    <nav class="navbar navbar-dark navbar-expand-lg px-2 sticky-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
       <button
         class="navbar-toggler"
         type="button"
@@ -45,28 +38,34 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="collapse navbar-collapse justify-content-center"
-        id="navbarNav"
-      >
+      <a class="logo" href="#">
+        <img
+          src="assets/beer_king.png"
+          alt="Логотип"
+          width="50px"
+          height="50px"
+        />
+      </a>
+      <div style="width: 50px"></div>
+      <div class="collapse navbar-collapse justify-content-left" id="navbarNav">
         <ul class="navbar-nav px-2 gap-3">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html"
+            <a class="nav-link" href="#"
               ><i class="bi bi-house me-2"></i>Главная</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">
+            <a class="nav-link" href="#about">
               <i class="bi bi-info-circle me-2"></i>О нас
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacts.html">
+            <a class="nav-link" href="#contacts">
               <i class="bi bi-telephone me-2"></i>Контакты
             </a>
           </li>
-          <li>
-            <button class="btn btn-primary theme-toggle">
+          <li class="nav-item">
+            <button class="btn btn-primary theme-toggle py-2">
               <i class="bi bi-sun"></i>
             </button>
           </li>
@@ -195,34 +194,26 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span
             ><span class="visually-hidden">Next</span>
           </button>
-
-          <!-- <dialog id="drinkWindow">
-            <div class="modalContent">
-              <button id="closeModal" class="close">&times;</button>
-              <h2 id="modalTitle"></h2>
-              <img id="modalImg" src="" alt="" />
-              <div class="modalTextContainer">
-                <p id="modalText"></p>
-              </div>
-              <div class="emptyContainer"></div>
-              <div class="alcoholPercentContainer">
-                <p
-                  id="alcoholPercentText"
-                  style="color: var(--color-primary)"
-                ></p>
-              </div>
-            </div>
-          </dialog> -->
-
-          <div class="modal fade" id="drinkWindow" aria-hidden="true" aria-labelledby="drinkWindowLabel" tabindex="-1">
+          <div
+            class="modal fade"
+            id="drinkWindow"
+            aria-hidden="true"
+            aria-labelledby="drinkWindowLabel"
+            tabindex="-1"
+          >
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
                   <h2 class="modal-title" id="drinkWindowLabel"></h2>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
                 </div>
                 <div class="modal-body">
-                  <img id="modalImg" src="" alt="" class="img-fluid mb-3"/>
+                  <img id="modalImg" src="" alt="" class="img-fluid mb-3" />
                   <div class="modalTextContainer">
                     <p id="modalText"></p>
                   </div>
@@ -234,6 +225,9 @@
                       style="color: var(--color-primary)"
                     ></p>
                   </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -255,20 +249,159 @@
       </section>
 
       <div class="emptyContainer"></div>
+      <section id="about">
+        <h1>О нашей компании</h1>
+        <div class="container-fluid aboutBoxesContainer">
+          <div class="card card-aboutBox text-white">
+            <h2 class="boxHeader">Наша история</h2>
+            <p class="boxContent">
+              В далеком 1886 году два брата решили сделать мир более счастливым.
+              Для этого они отправились в далекие земли, чтобы узнать рецепты
+              самых главных зелий счастья. Объехав весь мир, они вернулись домой
+              и начали готовиться к революции в питейном деле. Поначалу их
+              воспринимали как чудаков, непонимающих, что они творят. Но вот
+              прошло уже больше 100 лет, а их самое главное достижение – жидкое
+              золото, или же пиво, – до сих пор остается напитком, который дарит
+              людям радость и счастье
+            </p>
+          </div>
+
+          <div class="card card-aboutBox text-white">
+            <h2 class="boxHeader">Наша команда</h2>
+            <p class="boxContent">
+              Наши самые главные любители пива собрались вместе для того, чтобы
+              подарить Вам билет в невероятное путешествие по стране жидкого
+              золота. Мы трепетно относимся к каждому товарищу и клиенту. Нам
+              очень важно, чтобы всем было комфортно
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="emptyContainer"></div>
       <section id="contacts">
         <h2>Контактная информация</h2>
-        <section class="contactsList">
-          <div class="container-fluid contacts-container">
-            <div class="card">
-              <i class="bi bi-envelope fs-2"></i>
-              <p style="margin: 3px" class="fs-5">pivlandia@gmail.com</p>
-            </div>
-            <div class="card">
-              <i class="bi bi-telephone fs-2"></i>
-              <p style="margin: 3px" class="fs-5">+8 (800) 555-35-35</p>
-            </div>
+        <div class="container-fluid contacts-container">
+          <div class="card">
+            <i class="bi bi-envelope fs-2"></i>
+            <p style="margin: 3px" class="fs-5">pivlandia@gmail.com</p>
           </div>
-        </section>
+          <div class="card">
+            <i class="bi bi-telephone fs-2"></i>
+            <p style="margin: 3px" class="fs-5">+8 (800) 555-35-35</p>
+          </div>
+        </div>
+        <div class="modalWindow">
+          <button class="btn btn-dark p-3 fs-4" id="openDialog" type="button">
+            Написать нам
+          </button>
+          <div class="modal" tabindex="-1" id="contactModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form
+                  id="contactForm"
+                  class="row g-3 needs-validation"
+                  novalidate
+                >
+                  <div class="modal-header">
+                    <h5 class="modal-title">Обратная связь</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"
+                        ><i class="bi bi-person-fill"></i
+                      ></span>
+                      <input
+                        name="Username"
+                        type="text"
+                        class="form-control"
+                        placeholder="Ваше имя"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        required
+                        minlength="2"
+                        autocomplete="given-name"
+                      />
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="example@gmail.com"
+                        aria-label="Email"
+                        aria-describedby="basic-addon2"
+                        required
+                        autocomplete="email"
+                      />
+                      <span class="input-group-text" id="basic-addon2"
+                        ><i class="bi bi-envelope-fill"></i
+                      ></span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <input
+                        name="tel"
+                        type="tel"
+                        class="form-control"
+                        placeholder="+7 (900) 000-00-00"
+                        aria-label="Phone"
+                        aria-describedby="basic-addon3"
+                        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                      />
+                      <span class="input-group-text" id="basic-addon3"
+                        ><i class="bi bi-telephone-fill"></i
+                      ></span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <input
+                        name="date"
+                        type="date"
+                        class="form-control"
+                        aria-label="Date"
+                        required
+                      />
+                      <span class="input-group-text" id="basic-addon4"
+                        ><i class="bi bi-calendar-fill"></i
+                      ></span>
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-text">Сообщение: </span>
+                      <textarea
+                        name="usermessage"
+                        class="form-control"
+                        aria-label="message"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      class="btn btn-secondary"
+                      type="button"
+                      data-bs-dismiss="modal"
+                    >
+                      Закрыть
+                    </button>
+                    <button class="btn btn-primary btn-submit" type="submit">
+                      Отправить
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <script src="./scripts/main.js"></script>
+          </div>
+        </div>
         <aside>
           <div class="emptyContainer"></div>
           <h2>Как нас найти?</h2>
@@ -282,14 +415,8 @@
             ></iframe>
           </div>
         </aside>
-        <div class="emptyContainer"></div>
-        <div class="buttonContainer">
-          <a class="site-nav_link btn btn-dark" href="contacts.html">Подробнее</a>
-        </div>
       </section>
-      <div class="emptyContainer"></div>
     </main>
-
     <footer class="text-center py-3 bg-dark">
       <p>Телефон: +8 (800) 555-35-35</p>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
