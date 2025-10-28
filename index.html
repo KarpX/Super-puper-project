@@ -73,10 +73,12 @@
       </div>
     </nav>
     <main>
-      <section>
-        <div class="emptyContainer"></div>
-        <div id="beerCarousel" class="carousel slide">
-          <!-- <div class="carousel-indicators">
+      <section class="carousel-section">
+        <div class="carousel-container">
+          <div class="emptyContainer"></div>
+          <h2>Наши напитки</h2>
+          <div id="beerCarousel" class="carousel slide">
+            <!-- <div class="carousel-indicators">
             <button
               type="button"
               data-bs-target="#beerCarousel"
@@ -104,141 +106,120 @@
               aria-label="Ламбик"
             ></button>
           </div> -->
-          <div class="carousel-inner">
-            <div
-              class="carousel-item active justify-content-center"
-              data-title="Лагер"
-              data-text="Светлое пиво из Германии. Сварено по классическому баварскому
+            <div class="carousel-inner">
+              <div
+                class="carousel-item active justify-content-center"
+                data-title="Лагер"
+                data-text="Светлое пиво из Германии. Сварено по классическому баварскому
                   рецепту. Гармоничный солодовый вкус и мягкое послевкусие с
                   горчинкой хмеля. Пена плотная и пышная. Идеально подходит к
                   мясным блюдам и копчёностям."
-              data-alcohol-percent="Содержание алкоголя — 4,9%"
-              data-img="assets/lager2.png"
-            >
-              <img
-                src="assets/lager2.png"
-                class="d-block img-fluid"
-                alt="Лагер"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Лагер</h5>
+                data-alcohol-percent="Содержание алкоголя — 4,9%"
+                data-img="assets/lager2.png"
+              >
+                <img
+                  src="assets/lager2.png"
+                  class="d-block img-fluid"
+                  alt="Лагер"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Лагер</h5>
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                data-title="Темный лагер"
+                data-text="Классический темный лагер в стиле Шварцбир, обладающий характерным бархатистым вкусом с солодово-кофейными тонами и гармоничной хмелевой горечью. В его составе — поджаренный ячменный солод, хмель и дрожжи. Благодаря такой рецептуре, лагер получает аутентичный, натуральный вкус."
+                data-alcohol-percent="Содержание алкоголя — 4,7%"
+                data-img="assets/dark_lager.png"
+              >
+                <img
+                  src="assets/dark_lager.png"
+                  class="d-block img-fluid"
+                  alt="Тёмный лагер"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Тёмный лагер</h5>
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                data-title="Эль"
+                data-text='Насыщенный, нефильтрованный золотой эль из линейки "Европейская классика", выполненный в стиле Belgian Blond Ale. Пиво изготавливается из пшеничного солода, бельгийского ячменного солода, жатецкого хмеля, кориандра и дрожжей. Оно обладает тонким эфирным ароматом с нотками специй, который создают бельгийские дрожжи. Крепость пива дает ощутимый согревающий эффект и стимулирует рецепторы, но не перегружает их. "Блонд Эль" станет идеальным сопровождением изысканных блюд из морепродуктов, рыбы и мяса птицы.'
+                data-alcohol-percent="Содержание алкоголя — 6%"
+                data-img="assets/el.png"
+              >
+                <img src="assets/el.png" class="d-block img-fluid" alt="Эль" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Эль</h5>
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                data-title="Ламбик"
+                data-text="Традиционная нефильтрованная смесь ламбиков собственного приготовления Ламбик Фабрик, полученная в результате спонтанного брожения."
+                data-alcohol-percent="Содержание алкоголя — 6,3%"
+                data-img="assets/lambic.png"
+              >
+                <img
+                  src="assets/lambic.png"
+                  class="d-block img-fluid"
+                  alt="Ламбик"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Ламбик</h5>
+                </div>
               </div>
             </div>
-            <div
-              class="carousel-item"
-              data-title="Темный лагер"
-              data-text="Классический темный лагер в стиле Шварцбир, обладающий характерным бархатистым вкусом с солодово-кофейными тонами и гармоничной хмелевой горечью. В его составе — поджаренный ячменный солод, хмель и дрожжи. Благодаря такой рецептуре, лагер получает аутентичный, натуральный вкус."
-              data-alcohol-percent="Содержание алкоголя — 4,7%"
-              data-img="assets/dark_lager.png"
-            >
-              <img
-                src="assets/dark_lager.png"
-                class="d-block img-fluid"
-                alt="Тёмный лагер"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Тёмный лагер</h5>
-              </div>
-            </div>
-            <div
-              class="carousel-item"
-              data-title="Эль"
-              data-text='Насыщенный, нефильтрованный золотой эль из линейки "Европейская классика", выполненный в стиле Belgian Blond Ale. Пиво изготавливается из пшеничного солода, бельгийского ячменного солода, жатецкого хмеля, кориандра и дрожжей. Оно обладает тонким эфирным ароматом с нотками специй, который создают бельгийские дрожжи. Крепость пива дает ощутимый согревающий эффект и стимулирует рецепторы, но не перегружает их. "Блонд Эль" станет идеальным сопровождением изысканных блюд из морепродуктов, рыбы и мяса птицы.'
-              data-alcohol-percent="Содержание алкоголя — 6%"
-              data-img="assets/el.png"
-            >
-              <img src="assets/el.png" class="d-block img-fluid" alt="Эль" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Эль</h5>
-              </div>
-            </div>
-            <div
-              class="carousel-item"
-              data-title="Ламбик"
-              data-text="Традиционная нефильтрованная смесь ламбиков собственного приготовления Ламбик Фабрик, полученная в результате спонтанного брожения."
-              data-alcohol-percent="Содержание алкоголя — 6,3%"
-              data-img="assets/lambic.png"
-            >
-              <img
-                src="assets/lambic.png"
-                class="d-block img-fluid"
-                alt="Ламбик"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Ламбик</h5>
-              </div>
-            </div>
-          </div>
 
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#beerCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span
-            ><span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#beerCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span
-            ><span class="visually-hidden">Next</span>
-          </button>
-          <div
-            class="modal fade"
-            id="drinkWindow"
-            aria-hidden="true"
-            aria-labelledby="drinkWindowLabel"
-            tabindex="-1"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content bg-dark">
-                <div class="modal-header">
-                  <h2 class="modal-title" id="drinkWindowLabel"></h2>
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <img id="modalImg" src="" alt="" class="img-fluid mb-3" />
-                  <div class="modalTextContainer">
-                    <p id="modalText"></p>
-                  </div>
-                  <div class="emptyContainer"></div>
-                  <div class="alcoholPercentContainer">
-                    <p
-                      class="text-dark"
-                      id="alcoholPercentText"
-                      style="color: var(--color-primary)"
-                    ></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span
+              ><span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#beerCarousel"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span
+              ><span class="visually-hidden">Next</span>
+            </button>
           </div>
+          <div class="emptyContainer"></div>
         </div>
       </section>
 
-      <div class="emptyContainer"></div>
       <section id="portfolio">
-        <div class="media">
-          <iframe
-            src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1"
-            width="100%"
-            height="480"
-            style="background-color: #000"
-            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-            loading="lazy"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+        <div class="blur-container">
+          <div class="emptyContainer"></div>
+          <div class="media">
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-205994891&id=456239017&hd=2&autoplay=1"
+              width="480"
+              height="480"
+              style="background-color: #000"
+              allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+              loading="lazy"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <iframe
+              width="480"
+              height="270"
+              src="https://rutube.ru/play/embed/5471cefe6d2d65987c54f1d4532ee24e/"
+              style="border: none"
+              allow="clipboard-write; autoplay"
+              webkitAllowFullScreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
@@ -272,8 +253,8 @@
         </div>
       </section>
 
-      <div class="emptyContainer"></div>
       <section id="contacts">
+        <div class="emptyContainer"></div>
         <h2>Контактная информация</h2>
         <div class="container-fluid contacts-container">
           <div class="card">
@@ -415,5 +396,40 @@
       <p>Телефон: +8 (800) 555-35-35</p>
       <p>&copy; 2023-2025 Название вашего сайта. Все права защищены.</p>
     </footer>
+    <div
+      class="modal fade"
+      id="drinkWindow"
+      aria-hidden="true"
+      aria-labelledby="drinkWindowLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h2 class="modal-title" id="drinkWindowLabel"></h2>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImg" src="" alt="" class="img-fluid mb-3" />
+            <div class="modalTextContainer">
+              <p id="modalText"></p>
+            </div>
+            <div class="emptyContainer"></div>
+            <div class="alcoholPercentContainer">
+              <p
+                class="text-dark"
+                id="alcoholPercentText"
+                style="color: var(--color-primary)"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
