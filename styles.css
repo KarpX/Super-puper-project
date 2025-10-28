@@ -11,6 +11,7 @@
   color-scheme: light;
   --header-image: url("./assets/header-bg.jpg");
   --drink-bg: url("./assets/drink-bg.jpeg");
+  --about-bg: url("./assets/about-bg.jpg");
   --bs-primary: #ffbf00;
   --bs-bg-gradient-to: #e5e5e5;
   --bs-bg-gradient-from: #fefefe;
@@ -84,7 +85,7 @@ footer p {
 
 .modal p,
 .modal h2 {
-  color: var(--text-color-card);
+  color: var(--bs-bg-gradient-to);
 }
 
 .card {
@@ -174,8 +175,8 @@ button.btn.btn-primary:active {
 
 .btn {
   padding: 10px;
-  background-color: var(--card-color);
-  color: var(--navbar-color);
+  color: var(--bs-bg-gradient-to);
+  border: 2px solid var(--bs-bg-gradient-to);
 }
 
 .carousel {
@@ -344,6 +345,24 @@ body {
   align-items: center;
 }
 
+#contacts {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    var(--about-bg);
+  background-size: cover;
+}
+
 .media {
   width: 70%;
+}
+
+.custom-btn {
+  background-color: transparent;
+}
+
+.custom-btn:hover {
+  background-color: var(--card-color);
+}
+
+.custom-btn:active {
+  background-color: var(--bs-bg-gradient-to);
 }
