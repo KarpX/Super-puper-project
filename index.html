@@ -4,6 +4,8 @@
     <script src="./scripts/main.js" defer></script>
     <script src="./scripts/drinkWindow.js" defer></script>
     <script src="./scripts/themeToggle.js" defer></script>
+    <script src="./scripts/fade.js" defer></script>
+    <script src="./scripts/closenavmenu.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Пивляндия</title>
@@ -25,12 +27,15 @@
     <div class="container-fluid p-0">
       <header class="text-white py-0">
         <div class="container-fluid quote-container">
-          <h1 class="quote">Ничто так не согревает душу, как холодное пиво</h1>
+          <h1 class="quote fade-in">
+            Ничто так не согревает душу, как холодное пиво
+          </h1>
         </div>
       </header>
     </div>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
       <button
+        id="navbar-toggler"
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -228,7 +233,7 @@
         <div class="emptyContainer"></div>
         <h1>О нашей компании</h1>
         <div class="container-fluid aboutBoxesContainer">
-          <div class="card card-aboutBox">
+          <div class="card card-aboutBox fade-in">
             <h2 class="boxHeader">Наша история</h2>
             <p class="boxContent">
               В далеком 1886 году два брата решили сделать мир более счастливым.
@@ -242,7 +247,7 @@
             </p>
           </div>
 
-          <div class="card card-aboutBox">
+          <div class="card card-aboutBox fade-in">
             <h2 class="boxHeader">Наша команда</h2>
             <p class="boxContent">
               Наши самые главные любители пива собрались вместе для того, чтобы
@@ -258,17 +263,21 @@
         <div class="emptyContainer"></div>
         <h2>Контактная информация</h2>
         <div class="container-fluid contacts-container">
-          <div class="card">
+          <div class="card fade-in">
             <i class="bi bi-envelope"></i>
             <p style="margin: 3px">pivlandia@gmail.com</p>
           </div>
-          <div class="card">
+          <div class="card fade-in">
             <i class="bi bi-telephone"></i>
             <p style="margin: 3px">+8 (800) 555-35-35</p>
           </div>
         </div>
         <div class="modalWindow">
-          <button class="btn custom-btn p-3 fs-4" id="openDialog" type="button">
+          <button
+            class="btn custom-btn p-3 fs-4 fade-in"
+            id="openDialog"
+            type="button"
+          >
             Написать нам
           </button>
           <div class="modal" tabindex="-1" id="contactModal">
