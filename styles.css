@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Poiret+One&family=Roboto:wght@700&display=swap");
 
-@media (max-width: 990px) {
-  .navbar-collapse {
-    background-color: var(--navbar-color);
-    padding: 10px;
-  }
-}
-
 :root {
   color-scheme: light;
   --header-image: url("./assets/header-bg.jpg");
@@ -14,6 +7,9 @@
   --about-bg: url("./assets/about-bg.jpg");
   --beer-bg1: url("./assets/beer-bg1.jpg");
   --gallery-bg: url("./assets/gallery-bg.jpg");
+  --history-bg: url("./assets/history-bg.jpg");
+  --modal-bg: url("./assets/modal-bg.jpg");
+  --map-container-texture: url("./assets/texture.jpg");
   --bs-primary: #ffbf00;
   --bs-bg-gradient-to: #e5e5e5;
   --bs-bg-gradient-from: #fefefe;
@@ -55,6 +51,17 @@ body {
   color: #e5e5e5;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.3s ease, transform 1.3s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .quote-container {
   margin-left: 5%;
   display: flex;
@@ -72,17 +79,23 @@ a {
   color: var(--text-fg-color);
 }
 
-footer {
-  border-top: 2px solid var(--bs-bg-gradient-to);
+.hero {
+  margin: 0;
+  padding: 0;
 }
 
 footer p {
   color: var(--text-color);
 }
 
-.card p,
-.card h2 {
-  color: var(--text-color-card);
+.modal-drink {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    var(--modal-bg);
+  background-size: cover;
+}
+
+.modalTextContainer {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .modal p,
@@ -92,6 +105,19 @@ footer p {
 
 .card {
   background-color: var(--card-color);
+}
+
+.card p,
+.card h2 {
+  color: var(--text-color-card);
+}
+
+.card p {
+  font-size: 100%;
+}
+
+.card i {
+  font-size: 1.5rem;
 }
 
 img {
@@ -221,6 +247,10 @@ button.btn.btn-primary:active {
   height: 100%;
 }
 
+.modal-img-container {
+  display: flex;
+}
+
 .carousel-inner {
   justify-self: center;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -250,7 +280,6 @@ button.btn.btn-primary:active {
   align-items: center;
   padding: 15px;
   gap: 10p;
-  color: white;
   width: 15%;
 }
 
@@ -268,8 +297,6 @@ h2 {
 .mapContainer {
   display: flex;
   justify-self: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
   width: 50%;
 }
 
@@ -297,6 +324,7 @@ section {
   text-align: center;
   border: 2px solid var(--bs-primary);
   padding: 10px;
+  font-size: 1.2rem;
 }
 
 #alcoholPercentText {
@@ -304,6 +332,7 @@ section {
   padding: 10px;
   background-color: var(--bs-primary);
   font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .card-aboutBox {
@@ -314,7 +343,7 @@ section {
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
-  width: 30%;
+  width: 50%;
 }
 
 .aboutBoxesContainer {
@@ -324,6 +353,12 @@ section {
   justify-content: center;
   gap: 20px;
   padding-bottom: 40px;
+}
+
+#modalImg {
+  justify-self: center;
+  width: 18rem;
+  height: auto;
 }
 
 .card-aboutBox .boxContent {
@@ -402,4 +437,135 @@ body {
 
 .custom-btn:active {
   background-color: var(--bs-bg-gradient-to) !important;
+}
+
+#about {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    var(--history-bg);
+  background-size: cover;
+}
+
+.modal-body .emptyContainer {
+  height: 5px;
+}
+
+@media (max-width: 990px) {
+  .navbar-collapse {
+    background-color: var(--navbar-color);
+    padding: 10px;
+  }
+
+  .quote-container {
+    justify-self: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .quote {
+    font-size: 2.7rem;
+    margin: 0;
+  }
+
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      var(--header-image);
+    background-size: cover;
+    background-position: 42rem bottom;
+  }
+
+  .carousel {
+    width: fit-content;
+  }
+
+  .carousel-container {
+    height: 22rem;
+  }
+
+  .carousel-inner {
+    width: 23rem;
+    height: max-content;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 80px;
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .media iframe {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  #about {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .card p {
+    font-size: 100%;
+  }
+
+  .card i {
+    font-size: 1.5rem;
+  }
+
+  .card-aboutBox {
+    width: 90%;
+  }
+
+  #contacts {
+    background-position: 200rem;
+    background-size: cover;
+  }
+
+  .mapContainer {
+    width: 90%;
+  }
+
+  .logo {
+    padding-left: 0;
+    margin-left: -10px;
+  }
+
+  .navbar-collapse {
+    margin-right: 0;
+  }
+
+  #modalText {
+    font-size: 1.25rem;
+  }
+
+  #alcoholPercentText {
+    font-size: 1.15rem;
+  }
+
+  .carousel-container .emptyContainer {
+    height: 10px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption {
+    display: flex;
+    opacity: 1;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+  }
+
+  .carousel-caption h5 {
+    margin-top: 0;
+    font-size: 1.9rem;
+  }
 }
