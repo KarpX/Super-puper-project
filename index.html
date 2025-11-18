@@ -24,15 +24,17 @@
   </head>
 
   <body class="theme-dark">
-    <div class="container-fluid p-0">
-      <header class="text-white py-0">
-        <div class="container-fluid quote-container">
-          <h1 class="quote fade-in">
-            Ничто так не согревает душу, как холодное пиво
-          </h1>
-        </div>
-      </header>
-    </div>
+    <section class="hero">
+      <div class="container-fluid p-0">
+        <header class="text-white py-0">
+          <div class="container-fluid quote-container">
+            <h1 class="quote fade-in">
+              Ничто так не согревает душу, как холодное пиво
+            </h1>
+          </div>
+        </header>
+      </div>
+    </section>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
       <button
         id="navbar-toggler"
@@ -127,7 +129,7 @@
                   class="d-block img-fluid"
                   alt="Лагер"
                 />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                   <h5>Лагер</h5>
                 </div>
               </div>
@@ -143,7 +145,7 @@
                   class="d-block img-fluid"
                   alt="Тёмный лагер"
                 />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                   <h5>Тёмный лагер</h5>
                 </div>
               </div>
@@ -155,7 +157,7 @@
                 data-img="assets/el.png"
               >
                 <img src="assets/el.png" class="d-block img-fluid" alt="Эль" />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                   <h5>Эль</h5>
                 </div>
               </div>
@@ -171,7 +173,7 @@
                   class="d-block img-fluid"
                   alt="Ламбик"
                 />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                   <h5>Ламбик</h5>
                 </div>
               </div>
@@ -231,7 +233,7 @@
 
       <section id="about">
         <div class="emptyContainer"></div>
-        <h1>О нашей компании</h1>
+        <h2>О нашей компании</h2>
         <div class="container-fluid aboutBoxesContainer">
           <div class="card card-aboutBox fade-in">
             <h2 class="boxHeader">Наша история</h2>
@@ -426,16 +428,17 @@
             ></button>
           </div>
           <div class="modal-body">
-            <img id="modalImg" src="" alt="" class="img-fluid mb-3" />
+            <div class="modal-img-container">
+              <img id="modalImg" src="" alt="" class="img-fluid mb-3" />
+            </div>
             <div class="modalTextContainer">
               <p id="modalText"></p>
             </div>
             <div class="emptyContainer"></div>
             <div class="alcoholPercentContainer">
               <p
-                class="text-dark"
                 id="alcoholPercentText"
-                style="color: var(--color-primary)"
+                style="color: var(--bs-bg-gradient-to)"
               ></p>
             </div>
           </div>
