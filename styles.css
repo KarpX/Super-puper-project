@@ -34,6 +34,7 @@ body.theme-dark {
   --card-color: rgb(211, 215, 219);
   --navbar-color: rgb(33, 37, 41);
   --bg-color: rgb(33, 37, 41);
+  --modal-bg: rgb(33, 37, 41);
 }
 
 html,
@@ -239,6 +240,29 @@ button.btn.btn-primary:active {
   padding: 0;
   margin: 0;
   transition: opacity 0.2s ease;
+}
+
+.modal-content {
+  background-color: var(--modal-bg);
+  color: var(--bs-bg-gradient-to);
+  font-size: 1.5rem;
+}
+
+#close-btn {
+  color: var(--bs-bg-gradient-to);
+  border: 2px solid var(--bs-bg-gradient-to);
+  background-color: var(--bs-bg-gradient-to);
+  margin-right: 5px;
+}
+
+#deny-btn {
+  border-color: var(--drink-bg);
+}
+
+#submit-btn {
+  background-color: var(--bs-bg-gradient-to);
+  color: var(--modal-bg);
+  font-size: 1.2rem;
 }
 
 .carousel-item img {
