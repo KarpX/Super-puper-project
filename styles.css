@@ -31,10 +31,10 @@ body.theme-dark {
   --text-fg-color: rgb(234, 233, 226);
   --text-color: rgb(234, 233, 226);
   --text-color-card: rgb(33, 37, 41);
-  --card-color: rgb(211, 215, 219);
+  --card-color: #fefefe;
   --navbar-color: rgb(33, 37, 41);
   --bg-color: rgb(33, 37, 41);
-  --modal-bg: rgb(33, 37, 41);
+  --modal-bg: url("./assets/modal-bg.jpg");
 }
 
 html,
@@ -114,7 +114,7 @@ footer p {
 }
 
 .card p {
-  font-size: 100%;
+  font-size: 1.7rem;
 }
 
 .card i {
@@ -150,6 +150,7 @@ header {
   background-color: var(--navbar-color);
   height: var(--navbar-height);
   align-items: center;
+  font-size: 1.2rem;
 }
 
 .navbar-collapse {
@@ -243,8 +244,8 @@ button.btn.btn-primary:active {
 }
 
 .modal-content {
-  background-color: var(--modal-bg);
   color: var(--bs-bg-gradient-to);
+  background-size: cover;
   font-size: 1.5rem;
 }
 
@@ -303,8 +304,8 @@ button.btn.btn-primary:active {
 .card {
   align-items: center;
   padding: 15px;
-  gap: 10p;
-  width: 15%;
+  gap: 10px;
+  width: 30em;
 }
 
 .contacts-container {
@@ -368,6 +369,7 @@ section {
   margin: 20px;
   border-radius: 10px;
   width: 50%;
+  font-size: 1.4rem;
 }
 
 .aboutBoxesContainer {
@@ -387,7 +389,6 @@ section {
 
 .card-aboutBox .boxContent {
   text-align: center;
-  font-size: large;
 }
 
 h1 {
@@ -471,6 +472,10 @@ body {
 
 .modal-body .emptyContainer {
   height: 5px;
+}
+
+.contacts .modal-content {
+  background-color: var(--bg-color);
 }
 
 @media (max-width: 990px) {
@@ -557,7 +562,7 @@ body {
 
   .logo {
     padding-left: 0;
-    margin-left: -10px;
+    margin-left: -20px;
   }
 
   .navbar-collapse {
@@ -591,5 +596,147 @@ body {
   .carousel-caption h5 {
     margin-top: 0;
     font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .navbar-collapse {
+    background-color: var(--navbar-color);
+    padding: 10px;
+  }
+
+  .quote-container {
+    justify-self: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .quote {
+    font-size: 2.7rem;
+    margin: 0;
+  }
+
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      var(--header-image);
+    background-size: cover;
+    background-position: 42rem bottom;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-container {
+    height: 22rem;
+  }
+
+  .carousel-inner {
+    width: 100%;
+    height: max-content;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 80px;
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .media iframe {
+    width: 18em;
+    height: 18em;
+    padding: 10px;
+  }
+
+  #about {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .card {
+    width: 70%;
+  }
+
+  .contacts-container .card {
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 100%;
+  }
+
+  .card i {
+    font-size: 1.5rem;
+  }
+
+  .card-aboutBox {
+    width: 90%;
+  }
+
+  #contacts {
+    background-position: 95em -5em;
+    background-size: cover;
+  }
+
+  .mapContainer {
+    width: 90%;
+  }
+
+  .logo {
+    padding-left: 0;
+    margin-left: -20px;
+  }
+
+  .navbar-collapse {
+    margin-right: 0;
+  }
+
+  #modalText {
+    font-size: 1.25rem;
+  }
+
+  #alcoholPercentText {
+    font-size: 1.15rem;
+  }
+
+  .carousel-container .emptyContainer {
+    height: 10px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption {
+    display: flex;
+    opacity: 1;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+  }
+
+  .carousel-caption h5 {
+    margin-top: 0;
+    font-size: 1.9rem;
+  }
+
+  .contacts-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    padding: 10px;
   }
 }
